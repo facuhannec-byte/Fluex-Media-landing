@@ -72,49 +72,23 @@ export default function HookDoors() {
         );
       });
 
-      const SLOT_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      const randomChar = () =>
-        SLOT_CHARS[Math.floor(Math.random() * SLOT_CHARS.length)];
-
       letters.forEach((el, index) => {
         if (!el) return;
         const isAccent = index === 4;
-        const finalChar = el.textContent ?? "";
-        const decoys = [randomChar(), randomChar(), randomChar()];
-        const spinPosition = 0.72 + index * 0.035;
-        const spinDuration = 0.1;
-
-        tl.fromTo(
-          el,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.05, ease: "power1.out" },
-          spinPosition,
-        );
-
-        const reel = { step: 0 };
-        tl.to(
-          reel,
-          {
-            step: decoys.length,
-            duration: spinDuration,
-            ease: `steps(${decoys.length})`,
-            onUpdate: () => {
-              const i = Math.min(Math.floor(reel.step), decoys.length - 1);
-              el.textContent = decoys[i];
-            },
-            onComplete: () => {
-              el.textContent = finalChar;
-            },
-          },
-          spinPosition,
-        );
-
+        const position = 0.72 + index * 0.03;
         if (isAccent) {
           tl.fromTo(
             el,
-            { scale: 1.9 },
-            { scale: 1, duration: 0.15, ease: "back.out(2.5)" },
-            spinPosition + spinDuration,
+            { opacity: 0, scale: 1.9, y: 0 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "back.out(2.5)" },
+            position,
+          );
+        } else {
+          tl.fromTo(
+            el,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" },
+            position,
           );
         }
       });

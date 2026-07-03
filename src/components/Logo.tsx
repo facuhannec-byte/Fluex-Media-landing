@@ -1,8 +1,8 @@
 import Wordmark from "@/components/Wordmark";
 
 export const LOGO_VIEWBOX = "0 0 160 100";
-export const LOGO_LINE_PATH = "M4 100 H42 L74 46 L91 63 L128 25 L146 11";
-export const LOGO_ARROW_POINTS = "157,2 150,19 139,5";
+export const LOGO_LINE_PATH = "M4 100 H42 L74 46 L91 63 L146 11";
+export const LOGO_ARROW_POINTS = "156,1 151,18 140,5";
 
 export function LogoIcon({ className }: { className?: string }) {
   return (
