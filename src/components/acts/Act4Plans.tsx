@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import SectionBackdrop from "@/components/SectionBackdrop";
 
 const paths = [
   {
@@ -23,38 +25,45 @@ const paths = [
 
 export default function Act4Plans() {
   return (
-    <section id="planes" className="min-h-screen bg-cream-soft px-6 py-24 sm:px-10">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-xl">
+    <section
+      id="planes"
+      className="relative min-h-screen overflow-hidden bg-cream-soft px-6 py-24 sm:px-10"
+    >
+      <SectionBackdrop variant="plans" />
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <Reveal variant="fade" className="max-w-xl">
           <span className="text-xs uppercase tracking-[0.3em] text-accent">
             Planes
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
             No hay un plan único. Hay uno para lo que estás buscando.
           </h2>
-        </div>
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {paths.map((path) => (
-            <div
+          {paths.map((path, index) => (
+            <Reveal
               key={path.plan}
-              className="flex flex-col rounded-2xl border border-brown-dark/10 bg-cream p-8"
+              variant={index % 2 === 0 ? "slide-left" : "slide-right"}
+              delay={index * 0.1}
             >
-              <span className="text-sm font-medium text-brown-dark">
-                {path.goal}
-              </span>
-              <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
-                {path.plan}
-              </h3>
-              <p className="mt-4 flex-1 text-sm text-brown-dark">
-                {path.description}
-              </p>
-              <Link
-                href="/contacto"
-                className="mt-6 text-sm font-medium text-accent transition-colors hover:text-brown-dark"
-              >
-                Ver si me sirve →
-              </Link>
-            </div>
+              <div className="flex h-full flex-col rounded-2xl border border-brown-dark/10 bg-cream p-8">
+                <span className="text-sm font-medium text-brown-dark">
+                  {path.goal}
+                </span>
+                <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+                  {path.plan}
+                </h3>
+                <p className="mt-4 flex-1 text-sm text-brown-dark">
+                  {path.description}
+                </p>
+                <Link
+                  href="/contacto"
+                  className="mt-6 text-sm font-medium text-accent transition-colors hover:text-brown-dark"
+                >
+                  Ver si me sirve →
+                </Link>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

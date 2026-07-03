@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Wordmark from "@/components/Wordmark";
 
 const links = [
   { href: "/#planes", label: "Planes" },
@@ -15,7 +16,7 @@ export default function Nav() {
           href="/"
           className="font-display text-lg font-semibold tracking-tight text-ink"
         >
-          Fluex Media
+          <Wordmark text="Fluex Media" />
         </Link>
         <ul className="flex items-center gap-6 text-sm font-medium text-brown-dark sm:gap-8">
           {links.map((link) => (
