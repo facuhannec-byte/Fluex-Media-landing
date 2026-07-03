@@ -18,7 +18,7 @@ const steps = [
     number: "02",
     title: "Estrategia",
     description:
-      "Definimos objetivos concretos y el camino más corto para llegar a ellos.",
+      "Definimos objetivos concretos y priorizamos con el método ICE (Impacto, Confianza, Facilidad) el camino más corto para llegar a ellos.",
   },
   {
     number: "03",

@@ -6,18 +6,21 @@ const photos = [
   {
     src: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1000&auto=format&fit=crop",
     alt: "Espacio de trabajo creativo con moodboard y notas en pantalla",
+    caption: "Estrategia creativa",
     className: "col-span-2 aspect-[16/10]",
     variant: "fade" as const,
   },
   {
     src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop",
     alt: "Gráfico de crecimiento en la pantalla de una laptop",
+    caption: "Resultados medibles",
     className: "aspect-square",
     variant: "slide-left" as const,
   },
   {
     src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop",
     alt: "Íconos de plataformas digitales y redes sociales",
+    caption: "Presencia multiplataforma",
     className: "aspect-square",
     variant: "slide-right" as const,
   },
@@ -37,9 +40,12 @@ export default function Act2About() {
             mercado nuevo?
           </h2>
           <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
-            Trabajamos con empresas de cualquier rubro, adaptando la
-            estrategia a lo que tu marca realmente necesita — sin fórmulas
-            genéricas.
+            Trabajamos mediante estrategia, contenido y campañas de
+            captación medibles: auditamos tu marca, definimos el mensaje
+            que te distingue y lo llevamos a la plataforma donde realmente
+            está tu público. El resultado: más visibilidad, más consultas
+            y más ventas — lo aplicamos a empresas de cualquier rubro, sin
+            fórmulas genéricas.
           </p>
         </Reveal>
         <div className="grid grid-cols-2 gap-4">
@@ -57,6 +63,9 @@ export default function Act2About() {
                   sizes="(min-width: 768px) 30vw, 45vw"
                   className="object-cover"
                 />
+                <span className="absolute bottom-3 left-3 rounded-full bg-ink/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cream">
+                  {photo.caption}
+                </span>
               </div>
             </Reveal>
           ))}
