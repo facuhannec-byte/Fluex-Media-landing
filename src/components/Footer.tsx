@@ -1,21 +1,19 @@
 import Link from "next/link";
 import Wordmark from "@/components/Wordmark";
-import FireFlame from "@/components/FireFlame";
+import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-brown-dark/10 bg-cream-soft">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-        <div className="flex items-end gap-3">
-          <FireFlame className="-mb-3 -ml-3" scale={0.45} />
-          <div>
-            <p className="font-display text-lg font-semibold text-ink">
-              <Wordmark text="Fluex Media" />
-            </p>
-            <p className="mt-1 text-sm text-brown-dark">
-              Crecimiento y captación de atención para tu marca.
-            </p>
-          </div>
+      <SectionBackdrop variant="page" />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+        <div>
+          <p className="font-display text-lg font-semibold text-ink">
+            <Wordmark text="Fluex Media" />
+          </p>
+          <p className="mt-1 text-sm text-brown-dark">
+            Crecimiento y captación de atención para tu marca.
+          </p>
         </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-brown-dark">
           <li>

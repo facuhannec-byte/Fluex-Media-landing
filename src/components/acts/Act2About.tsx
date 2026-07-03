@@ -32,11 +32,11 @@ export default function Act2About() {
           <span className="text-xs uppercase tracking-[0.3em] text-accent">
             Quiénes somos
           </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+          <h2 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-5xl">
             ¿Necesitás más visibilidad? ¿Más ventas? ¿Posicionarte en un
             mercado nuevo?
           </h2>
-          <p className="mt-6 max-w-md text-brown-dark">
+          <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
             Trabajamos con empresas de cualquier rubro, adaptando la
             estrategia a lo que tu marca realmente necesita — sin fórmulas
             genéricas.

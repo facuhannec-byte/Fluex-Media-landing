@@ -35,7 +35,7 @@ export default function Act4Plans() {
           <span className="text-xs uppercase tracking-[0.3em] text-accent">
             Planes
           </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+          <h2 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-5xl">
             No hay un plan único. Hay uno para lo que estás buscando.
           </h2>
         </Reveal>
@@ -50,7 +50,7 @@ export default function Act4Plans() {
                 <span className="text-sm font-medium text-brown-dark">
                   {path.goal}
                 </span>
-                <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+                <h3 className="mt-3 font-display text-2xl font-semibold uppercase text-ink">
                   {path.plan}
                 </h3>
                 <p className="mt-4 flex-1 text-sm text-brown-dark">

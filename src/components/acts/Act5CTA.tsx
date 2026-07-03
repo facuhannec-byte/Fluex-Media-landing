@@ -7,7 +7,7 @@ export default function Act5CTA() {
     <section className="relative flex min-h-screen flex-col items-center justify-center gap-8 overflow-hidden bg-ink px-6 text-center text-cream">
       <SectionBackdrop variant="cta" />
       <Reveal variant="fade" className="relative z-10 flex flex-col items-center gap-8">
-        <p className="font-display text-3xl font-medium leading-snug sm:text-5xl md:text-6xl">
+        <p className="font-display text-4xl font-medium uppercase leading-snug sm:text-6xl md:text-7xl">
           ¿Te interesa?
         </p>
         <Link

@@ -41,10 +41,10 @@ export default function NosotrosPage() {
               <span className="text-xs uppercase tracking-[0.3em] text-accent">
                 Nosotros
               </span>
-              <h1 className="mt-4 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
+              <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
                 Una agencia hecha por gente obsesionada con el crecimiento.
               </h1>
-              <p className="mt-6 max-w-2xl text-brown-dark">
+              <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
                 Fluex Media nació de una idea simple: la mayoría de las
                 empresas no tienen un problema de producto, tienen un
                 problema de atención. Nadie las ve. Nos dedicamos a cambiar
@@ -71,13 +71,13 @@ export default function NosotrosPage() {
 
         <section className="bg-cream-soft px-6 py-24 sm:px-10">
           <div className="mx-auto max-w-4xl">
-            <h2 className="font-display text-3xl font-medium text-ink">
+            <h2 className="font-display text-3xl font-medium uppercase text-ink sm:text-4xl">
               Lo que nos guía
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {values.map((value) => (
                 <div key={value.title}>
-                  <h3 className="font-display text-lg font-semibold text-ink">
+                  <h3 className="font-display text-lg font-semibold uppercase text-ink">
                     {value.title}
                   </h3>
                   <p className="mt-2 text-sm text-brown-dark">

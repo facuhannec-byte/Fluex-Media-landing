@@ -59,25 +59,6 @@ body {
   }
 }
 
-@keyframes flame-flicker {
-  0%, 100% {
-    transform: scaleY(1) scaleX(1) skewX(0deg);
-    opacity: 0.85;
-  }
-  25% {
-    transform: scaleY(1.08) scaleX(0.96) skewX(1deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scaleY(0.94) scaleX(1.03) skewX(-1.5deg);
-    opacity: 0.9;
-  }
-  75% {
-    transform: scaleY(1.05) scaleX(0.97) skewX(1deg);
-    opacity: 0.95;
-  }
-}
-
 .animate-drift-a {
   animation: drift-a 26s ease-in-out infinite;
 }
@@ -90,11 +71,24 @@ body {
   animation: spin-slow 60s linear infinite;
 }
 
+@keyframes bounce-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-y {
+  animation: bounce-y 1.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-drift-a,
   .animate-drift-b,
   .animate-spin-slow,
-  [data-flame] {
+  .animate-bounce-y {
     animation: none !important;
   }
 }

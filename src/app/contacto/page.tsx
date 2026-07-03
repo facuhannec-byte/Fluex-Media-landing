@@ -19,10 +19,10 @@ export default function ContactoPage() {
               <span className="text-xs uppercase tracking-[0.3em] text-accent">
                 Contacto
               </span>
-              <h1 className="mt-4 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
+              <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
                 Contanos qué necesita tu marca.
               </h1>
-              <p className="mt-6 max-w-md text-brown-dark">
+              <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
                 Completá el formulario y te respondemos en menos de 48 horas
                 para agendar una primera charla sin compromiso.
               </p>

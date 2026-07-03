@@ -44,10 +44,10 @@ export default function MetodologiaPage() {
             <span className="text-xs uppercase tracking-[0.3em] text-accent">
               Metodología
             </span>
-            <h1 className="mt-4 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
+            <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
               Un proceso claro, sin vueltas.
             </h1>
-            <p className="mt-6 max-w-2xl text-brown-dark">
+            <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
               No improvisamos. Cada proyecto pasa por las mismas cuatro
               etapas, adaptadas a la realidad de cada marca.
             </p>
@@ -65,7 +65,7 @@ export default function MetodologiaPage() {
                   {step.number}
                 </span>
                 <div>
-                  <h2 className="font-display text-2xl font-semibold text-ink">
+                  <h2 className="font-display text-2xl font-semibold uppercase text-ink">
                     {step.title}
                   </h2>
                   <p className="mt-2 max-w-xl text-brown-dark">
