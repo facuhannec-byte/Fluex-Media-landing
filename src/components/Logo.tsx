@@ -1,8 +1,8 @@
 import Wordmark from "@/components/Wordmark";
 
-export const LOGO_VIEWBOX = "0 0 200 110";
-export const LOGO_LINE_PATH = "M15 78 H45 L68 42 L90 58 L115 22 L150 9";
-export const LOGO_ARROW_POINTS = "156,3 138,3 148,22";
+export const LOGO_VIEWBOX = "0 0 160 100";
+export const LOGO_LINE_PATH = "M4 100 H42 L74 46 L91 63 L128 25 L146 11";
+export const LOGO_ARROW_POINTS = "157,2 150,19 139,5";
 
 export function LogoIcon({ className }: { className?: string }) {
   return (
@@ -11,7 +11,7 @@ export function LogoIcon({ className }: { className?: string }) {
       className={className}
       fill="none"
       stroke="currentColor"
-      strokeWidth={7}
+      strokeWidth={6.5}
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden

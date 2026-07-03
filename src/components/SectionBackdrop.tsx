@@ -13,7 +13,7 @@ type IconName =
   | "meta"
   | "instagram"
   | "tiktok"
-  | "reddit"
+  | "google"
   | "flame";
 
 const icons: Record<IconName, React.ReactNode> = {
@@ -63,14 +63,8 @@ const icons: Record<IconName, React.ReactNode> = {
   tiktok: (
     <path d="M10 20a4 4 0 1 1 0-8h1V4h3.2c.3 2.4 1.9 4 4.3 4.3V11c-1.6 0-3-.5-4.3-1.4V16a5 5 0 0 1-8.7 3.4" />
   ),
-  reddit: (
-    <>
-      <circle cx="12" cy="14.5" r="7" />
-      <circle cx="9" cy="14" r="1" fill="currentColor" stroke="none" />
-      <circle cx="15" cy="14" r="1" fill="currentColor" stroke="none" />
-      <path d="M8.5 17.5c1.8 1.2 5.2 1.2 7 0" />
-      <path d="M12 7.5V3M12 3a1.6 1.6 0 1 1 0 3.2" />
-    </>
+  google: (
+    <path d="M21 12.2c0-.7-.1-1.4-.2-2H12v4h5a4.6 4.6 0 0 1-4.8 3.4A5.6 5.6 0 0 1 12 6.6a5.5 5.5 0 0 1 3.5 1.3l2.8-2.8A9.5 9.5 0 1 0 21 12.2Z" />
   ),
   flame: (
     <path d="M12 21a6 6 0 0 0 6-6c0-3-2-5-3-8-1 2-1 4-2 4-1-2 0-4-1-6-3 3-5 6-5 10a6 6 0 0 0 5 6Z" />
@@ -169,7 +163,7 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
     placements: [
       place("chart", "tr", "lg", "animate-drift-b"),
       place("flame", "br", "md", "animate-drift-a"),
-      place("reddit", "bl", "sm", "animate-spin-slow"),
+      place("google", "bl", "sm", "animate-spin-slow"),
     ],
   },
 };

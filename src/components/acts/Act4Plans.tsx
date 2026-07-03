@@ -69,8 +69,8 @@ export default function Act4Plans() {
             Planes
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
-            No hay un plan único. Hay uno para{" "}
-            <span className="text-accent">lo que estás buscando</span>.
+            Cada negocio <span className="text-accent">crece distinto</span>.
+            Tu plan también debería.
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-8 lg:grid-cols-3">

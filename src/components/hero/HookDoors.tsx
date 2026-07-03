@@ -34,7 +34,7 @@ export default function HookDoors() {
       gsap.set(letters, { opacity: 0, y: 16 });
       gsap.set(labelLetters, { opacity: 0, y: 10 });
       gsap.set(arrowPathRef.current, { strokeDashoffset: 1 });
-      gsap.set(arrowHeadRef.current, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" });
+      gsap.set(arrowHeadRef.current, { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -57,9 +57,9 @@ export default function HookDoors() {
         )
         .fromTo(
           arrowHeadRef.current,
-          { opacity: 0, scale: 0.4 },
-          { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" },
-          0.36,
+          { opacity: 0, scale: 0.7 },
+          { opacity: 1, scale: 1, duration: 0.14, ease: "power2.out" },
+          0.38,
         );
 
       labelLetters.forEach((el, index) => {
@@ -72,23 +72,49 @@ export default function HookDoors() {
         );
       });
 
+      const SLOT_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const randomChar = () =>
+        SLOT_CHARS[Math.floor(Math.random() * SLOT_CHARS.length)];
+
       letters.forEach((el, index) => {
         if (!el) return;
         const isAccent = index === 4;
-        const position = 0.72 + index * 0.03;
+        const finalChar = el.textContent ?? "";
+        const decoys = [randomChar(), randomChar(), randomChar()];
+        const spinPosition = 0.72 + index * 0.035;
+        const spinDuration = 0.1;
+
+        tl.fromTo(
+          el,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.05, ease: "power1.out" },
+          spinPosition,
+        );
+
+        const reel = { step: 0 };
+        tl.to(
+          reel,
+          {
+            step: decoys.length,
+            duration: spinDuration,
+            ease: `steps(${decoys.length})`,
+            onUpdate: () => {
+              const i = Math.min(Math.floor(reel.step), decoys.length - 1);
+              el.textContent = decoys[i];
+            },
+            onComplete: () => {
+              el.textContent = finalChar;
+            },
+          },
+          spinPosition,
+        );
+
         if (isAccent) {
           tl.fromTo(
             el,
-            { opacity: 0, scale: 1.9, y: 0 },
-            { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "back.out(2.5)" },
-            position,
-          );
-        } else {
-          tl.fromTo(
-            el,
-            { opacity: 0, y: 16 },
-            { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" },
-            position,
+            { scale: 1.9 },
+            { scale: 1, duration: 0.15, ease: "back.out(2.5)" },
+            spinPosition + spinDuration,
           );
         }
       });
@@ -110,7 +136,7 @@ export default function HookDoors() {
             className="h-10 w-auto text-accent-soft sm:h-12"
             fill="none"
             stroke="currentColor"
-            strokeWidth={7}
+            strokeWidth={6.5}
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden

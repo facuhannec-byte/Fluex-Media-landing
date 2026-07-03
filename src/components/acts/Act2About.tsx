@@ -17,14 +17,28 @@ const photos = [
     className: "aspect-square",
     variant: "slide-left" as const,
   },
-  {
-    src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop",
-    alt: "Íconos de plataformas digitales y redes sociales",
-    caption: "Presencia multiplataforma",
-    className: "aspect-square",
-    variant: "slide-right" as const,
-  },
 ];
+
+// Solo las plataformas donde Fluex opera realmente — nada de logos
+// genéricos de una foto de stock (Discord, Figma, Netflix, Spotify...).
+const platformIcons = {
+  facebook: (
+    <path d="M16 3h-2.5A4.5 4.5 0 0 0 9 7.5V10H7v4h2v7h4v-7h2.6l.4-4H13V7.8c0-.6.4-1 1-1H16Z" />
+  ),
+  instagram: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="M17.5 6.5h.01" />
+    </>
+  ),
+  google: (
+    <path d="M21 12.2c0-.7-.1-1.4-.2-2H12v4h5a4.6 4.6 0 0 1-4.8 3.4A5.6 5.6 0 0 1 12 6.6a5.5 5.5 0 0 1 3.5 1.3l2.8-2.8A9.5 9.5 0 1 0 21 12.2Z" />
+  ),
+  tiktok: (
+    <path d="M10 20a4 4 0 1 1 0-8h1V4h3.2c.3 2.4 1.9 4 4.3 4.3V11c-1.6 0-3-.5-4.3-1.4V16a5 5 0 0 1-8.7 3.4" />
+  ),
+};
 
 export default function Act2About() {
   return (
@@ -35,11 +49,36 @@ export default function Act2About() {
           <span className="text-xs uppercase tracking-[0.3em] text-accent">
             Quiénes somos
           </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
-            ¿Buscás más visibilidad? ¿Más ventas? ¿Posicionarte en un{" "}
-            <span className="text-accent">mercado nuevo</span>?
-          </h2>
-          <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
+          <div className="mt-5 space-y-5">
+            <div>
+              <p className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+                ¿Buscás más <span className="text-accent">visibilidad</span>?
+              </p>
+              <p className="mt-1 text-sm text-brown-dark">
+                Que tu marca aparezca donde tu cliente ya está mirando, no
+                donde nadie la busca.
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+                ¿Necesitás más <span className="text-accent">ventas</span>?
+              </p>
+              <p className="mt-1 text-sm text-brown-dark">
+                Convertir esa atención en resultados medibles — no solo
+                likes.
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+                ¿Querés entrar a un{" "}
+                <span className="text-accent">mercado nuevo</span>?
+              </p>
+              <p className="mt-1 text-sm text-brown-dark">
+                Con estrategia desde el primer paso, no a los tropezones.
+              </p>
+            </div>
+          </div>
+          <p className="mt-8 max-w-md text-sm text-brown-dark sm:text-base">
             Somos FLUEX Media, una agencia de crecimiento estratégico.
             Ayudamos a negocios a conseguir más clientes de forma
             predecible: diseñamos la estrategia, creamos las campañas y
@@ -69,6 +108,34 @@ export default function Act2About() {
               </div>
             </Reveal>
           ))}
+          <Reveal variant="slide-right" className="aspect-square">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl bg-brown-dark">
+              <div className="grid h-full grid-cols-2 gap-3 p-6">
+                {Object.entries(platformIcons).map(([name, path]) => (
+                  <span
+                    key={name}
+                    className="flex items-center justify-center rounded-xl bg-cream/10"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.4}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6 text-cream sm:h-7 sm:w-7"
+                      aria-hidden
+                    >
+                      {path}
+                    </svg>
+                  </span>
+                ))}
+              </div>
+              <span className="absolute bottom-3 left-3 rounded-full bg-ink/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cream">
+                Presencia multiplataforma
+              </span>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
