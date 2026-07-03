@@ -94,80 +94,84 @@ function Icon({ name, className }: { name: IconName; className?: string }) {
   );
 }
 
-interface IconPlacement {
-  type: "icon";
+type Corner = "tl" | "tr" | "bl" | "br";
+type Size = "lg" | "md" | "sm";
+
+interface Placement {
   icon: IconName;
-  className: string;
+  corner: Corner;
+  size: Size;
   animation: string;
 }
 
-interface WordPlacement {
-  type: "word";
-  text: string;
-  className: string;
-  animation: string;
-}
+const cornerClass: Record<Corner, string> = {
+  tl: "left-[6%] top-[10%]",
+  tr: "right-[6%] top-[10%]",
+  bl: "left-[6%] bottom-[10%]",
+  br: "right-[6%] bottom-[10%]",
+};
 
-type Placement = IconPlacement | WordPlacement;
+// Larger elements sit further back (lower opacity); smaller ones can read a
+// touch stronger since they take up less visual weight. Every section gets
+// exactly three icons, anchored to three of the four corners — never
+// scattered mid-canvas — so the pattern always reads as intentional.
+const sizeClass: Record<Size, string> = {
+  lg: "h-16 w-16 opacity-10",
+  md: "h-10 w-10 opacity-[0.15]",
+  sm: "h-7 w-7 opacity-20",
+};
 
-const icon = (
-  iconName: IconName,
-  className: string,
+const place = (
+  icon: IconName,
+  corner: Corner,
+  size: Size,
   animation: string,
-): IconPlacement => ({ type: "icon", icon: iconName, className, animation });
+): Placement => ({ icon, corner, size, animation });
 
-const word = (
-  text: string,
-  className: string,
-  animation: string,
-): WordPlacement => ({ type: "word", text, className, animation });
-
-const variants: Record<string, Placement[]> = {
-  about: [
-    icon("chart", "left-[6%] top-[14%] h-12 w-12 text-brown/20", "animate-drift-a"),
-    icon("target", "right-[10%] top-[52%] h-10 w-10 text-accent/15", "animate-drift-b"),
-    icon("circle", "left-[42%] bottom-[10%] h-6 w-6 text-brown-dark/15", "animate-spin-slow"),
-    icon("facebook", "left-[22%] top-[68%] h-7 w-7 text-brown/15", "animate-drift-b"),
-    icon("instagram", "right-[24%] top-[18%] h-7 w-7 text-accent/15", "animate-drift-a"),
-    icon("spark", "left-[10%] top-[45%] h-5 w-5 text-accent/15", "animate-spin-slow"),
-    icon("spark", "right-[6%] bottom-[30%] h-4 w-4 text-brown/15", "animate-drift-a"),
-    icon("circle", "right-[35%] top-[8%] h-4 w-4 text-brown-dark/10", "animate-drift-b"),
-    word("VISIBILIDAD", "left-[4%] bottom-[32%] text-[10px] text-brown/25", "animate-drift-b"),
-  ],
-  bridge: [
-    icon("message", "left-[10%] top-[16%] h-9 w-9 text-cream/20", "animate-drift-b"),
-    icon("bell", "right-[12%] top-[22%] h-8 w-8 text-cream/20", "animate-drift-a"),
-    icon("dollar", "left-[16%] bottom-[20%] h-8 w-8 text-cream/15", "animate-drift-a"),
-    icon("chart", "right-[16%] bottom-[16%] h-9 w-9 text-cream/15", "animate-drift-b"),
-    icon("spark", "left-[30%] top-[35%] h-5 w-5 text-cream/20", "animate-spin-slow"),
-    icon("spark", "right-[32%] top-[65%] h-4 w-4 text-cream/15", "animate-drift-a"),
-    icon("circle", "left-[8%] top-[55%] h-5 w-5 text-cream/10", "animate-drift-b"),
-    icon("circle", "right-[8%] top-[45%] h-4 w-4 text-cream/10", "animate-spin-slow"),
-    word("ATENCIÓN", "right-[6%] bottom-[38%] text-[10px] text-cream/20", "animate-drift-a"),
-  ],
-  plans: [
-    icon("target", "right-[6%] top-[10%] h-10 w-10 text-accent/15", "animate-drift-a"),
-    icon("triangle", "left-[8%] bottom-[10%] h-7 w-7 text-brown/15", "animate-drift-b"),
-    icon("tiktok", "right-[16%] bottom-[14%] h-7 w-7 text-brown-dark/15", "animate-drift-a"),
-    icon("meta", "left-[22%] top-[20%] h-7 w-7 text-accent/15", "animate-drift-b"),
-    icon("reddit", "right-[32%] top-[45%] h-6 w-6 text-brown/10", "animate-spin-slow"),
-    icon("bars", "left-[6%] top-[45%] h-6 w-6 text-brown-dark/15", "animate-drift-a"),
-    icon("spark", "right-[8%] bottom-[35%] h-4 w-4 text-accent/15", "animate-spin-slow"),
-    word("ESTRATEGIA", "left-[4%] top-[8%] text-[10px] text-brown/20", "animate-drift-b"),
-  ],
-  cta: [
-    icon("megaphone", "right-[12%] bottom-[22%] h-10 w-10 text-cream/15", "animate-drift-a"),
-    icon("spark", "left-[10%] top-[18%] h-5 w-5 text-cream/15", "animate-spin-slow"),
-    icon("spark", "right-[20%] top-[30%] h-4 w-4 text-cream/10", "animate-drift-b"),
-    icon("circle", "left-[16%] bottom-[18%] h-4 w-4 text-cream/10", "animate-drift-a"),
-    word("IMPULSO", "right-[8%] top-[14%] text-[10px] text-cream/15", "animate-drift-b"),
-  ],
-  page: [
-    icon("chart", "right-[8%] top-[10%] h-10 w-10 text-brown/15", "animate-drift-b"),
-    icon("circle", "left-[6%] bottom-[14%] h-6 w-6 text-accent/10", "animate-drift-a"),
-    icon("spark", "left-[10%] top-[25%] h-4 w-4 text-brown/10", "animate-spin-slow"),
-    icon("flame", "right-[10%] bottom-[16%] h-6 w-6 text-accent/15", "animate-drift-a"),
-  ],
+// Light-background sections read in brown-dark; dark sections (ink/brown-dark
+// bg) read in cream. One tone per section keeps the whole cluster looking
+// like a single deliberate layer instead of mismatched fragments.
+const variants: Record<string, { tone: string; placements: Placement[] }> = {
+  about: {
+    tone: "text-brown-dark",
+    placements: [
+      place("chart", "tl", "lg", "animate-drift-a"),
+      place("instagram", "br", "md", "animate-drift-b"),
+      place("target", "tr", "sm", "animate-spin-slow"),
+    ],
+  },
+  bridge: {
+    tone: "text-cream",
+    placements: [
+      place("message", "tl", "lg", "animate-drift-b"),
+      place("dollar", "br", "md", "animate-drift-a"),
+      place("chart", "tr", "sm", "animate-drift-b"),
+    ],
+  },
+  plans: {
+    tone: "text-brown-dark",
+    placements: [
+      place("target", "tr", "lg", "animate-drift-a"),
+      place("tiktok", "bl", "md", "animate-drift-b"),
+      place("meta", "br", "sm", "animate-spin-slow"),
+    ],
+  },
+  cta: {
+    tone: "text-cream",
+    placements: [
+      place("megaphone", "br", "lg", "animate-drift-a"),
+      place("spark", "tl", "md", "animate-spin-slow"),
+      place("facebook", "bl", "sm", "animate-drift-b"),
+    ],
+  },
+  page: {
+    tone: "text-brown-dark",
+    placements: [
+      place("chart", "tr", "lg", "animate-drift-b"),
+      place("flame", "br", "md", "animate-drift-a"),
+      place("reddit", "bl", "sm", "animate-spin-slow"),
+    ],
+  },
 };
 
 export default function SectionBackdrop({
@@ -175,27 +179,19 @@ export default function SectionBackdrop({
 }: {
   variant: keyof typeof variants;
 }) {
+  const { tone, placements } = variants[variant];
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      className={`pointer-events-none absolute inset-0 z-0 overflow-hidden ${tone}`}
       aria-hidden
     >
-      {variants[variant].map((placement, index) =>
-        placement.type === "icon" ? (
-          <Icon
-            key={index}
-            name={placement.icon}
-            className={`absolute ${placement.className} ${placement.animation}`}
-          />
-        ) : (
-          <span
-            key={index}
-            className={`absolute font-display font-medium uppercase tracking-[0.3em] ${placement.className} ${placement.animation}`}
-          >
-            {placement.text}
-          </span>
-        ),
-      )}
+      {placements.map((placement, index) => (
+        <Icon
+          key={index}
+          name={placement.icon}
+          className={`absolute ${cornerClass[placement.corner]} ${sizeClass[placement.size]} ${placement.animation}`}
+        />
+      ))}
     </div>
   );
 }

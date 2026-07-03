@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Wordmark from "@/components/Wordmark";
+import { LogoIcon } from "@/components/Logo";
 
 const links = [
   { href: "/#planes", label: "Planes" },
@@ -14,8 +15,9 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-tight text-ink"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink"
         >
+          <LogoIcon className="h-5 w-auto text-accent" />
           <Wordmark text="Fluex Media" />
         </Link>
         <ul className="flex items-center gap-6 text-sm font-medium text-brown-dark sm:gap-8">

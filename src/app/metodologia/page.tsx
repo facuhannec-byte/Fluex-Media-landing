@@ -1,36 +1,35 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
   title: "Metodología — Fluex Media",
-  description: "Así trabajamos en Fluex Media, paso a paso.",
+  description: "El método ICE: cómo trabajamos en Fluex Media, en tres fases.",
 };
 
-const steps = [
+const phases = [
   {
-    number: "01",
-    title: "Diagnóstico",
+    letter: "I",
+    title: "Inmersión",
+    tagline: "Entender el negocio como si fuéramos parte de él.",
     description:
-      "Analizamos tu marca, tu mercado y tu competencia para entender dónde estás parado hoy.",
+      "Antes de proponer cualquier solución, investigamos en profundidad: qué vende el cliente y por qué la gente lo compra, quién es su cliente ideal, qué hace la competencia y qué lenguaje usa la audiencia.",
   },
   {
-    number: "02",
-    title: "Estrategia",
+    letter: "C",
+    title: "Construcción",
+    tagline: "Construir estrategias específicas para cada empresa.",
     description:
-      "Definimos objetivos concretos y priorizamos con el método ICE (Impacto, Confianza, Facilidad) el camino más corto para llegar a ellos.",
+      "Con la inmersión completa, construimos la estrategia de crecimiento, el framework de mensajes, las creatividades y la estructura de campañas. No existe una estrategia universal.",
   },
   {
-    number: "03",
-    title: "Ejecución",
+    letter: "E",
+    title: "Evolución",
+    tagline: "Medición y optimización continua basada en datos reales.",
     description:
-      "Producimos contenido, campañas y piezas con foco en captar atención real.",
-  },
-  {
-    number: "04",
-    title: "Medición y ajuste",
-    description:
-      "Revisamos resultados y optimizamos en base a datos, no a intuición.",
+      "Medimos performance semanalmente, optimizamos con evidencia, escalamos lo que funciona y pausamos lo que no.",
   },
 ];
 
@@ -39,41 +38,59 @@ export default function MetodologiaPage() {
     <>
       <Nav />
       <main className="flex-1">
-        <section className="px-6 py-24 sm:px-10">
-          <div className="mx-auto max-w-4xl">
-            <span className="text-xs uppercase tracking-[0.3em] text-accent">
-              Metodología
-            </span>
-            <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
-              Un proceso claro, sin vueltas.
-            </h1>
-            <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
-              No improvisamos. Cada proyecto pasa por las mismas cuatro
-              etapas, adaptadas a la realidad de cada marca.
-            </p>
+        <section className="relative overflow-hidden px-6 py-24 sm:px-10">
+          <SectionBackdrop variant="page" />
+          <div className="relative z-10 mx-auto max-w-4xl">
+            <Reveal variant="fade">
+              <span className="text-xs uppercase tracking-[0.3em] text-accent">
+                Metodología
+              </span>
+              <h1 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+                Un proceso claro, <span className="text-accent">sin vueltas</span>.
+              </h1>
+              <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
+                No improvisamos. Todo lo que hacemos con cada cliente pasa
+                por tres fases, en este orden. No es una fórmula: es una
+                forma de pensar el crecimiento.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="px-6 pb-16 sm:px-10">
+          <div className="mx-auto max-w-4xl divide-y divide-brown-dark/10 border-t border-brown-dark/10">
+            {phases.map((phase, index) => (
+              <Reveal
+                key={phase.letter}
+                variant={index % 2 === 0 ? "slide-left" : "slide-right"}
+              >
+                <div className="flex flex-col gap-2 py-10 sm:flex-row sm:gap-10">
+                  <span className="font-display text-4xl font-semibold text-accent sm:w-20">
+                    {phase.letter}
+                  </span>
+                  <div>
+                    <h2 className="font-display text-2xl font-semibold text-ink">
+                      {phase.title}
+                    </h2>
+                    <p className="mt-1 font-display italic text-brown-dark">
+                      {phase.tagline}
+                    </p>
+                    <p className="mt-3 max-w-xl text-sm text-brown-dark sm:text-base">
+                      {phase.description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </section>
 
         <section className="px-6 pb-24 sm:px-10">
-          <div className="mx-auto max-w-4xl divide-y divide-brown-dark/10 border-t border-brown-dark/10">
-            {steps.map((step) => (
-              <div
-                key={step.number}
-                className="flex flex-col gap-2 py-10 sm:flex-row sm:items-baseline sm:gap-10"
-              >
-                <span className="font-display text-3xl font-semibold text-accent sm:w-20">
-                  {step.number}
-                </span>
-                <div>
-                  <h2 className="font-display text-2xl font-semibold uppercase text-ink">
-                    {step.title}
-                  </h2>
-                  <p className="mt-2 max-w-xl text-brown-dark">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-4xl">
+            <p className="max-w-2xl font-display text-xl italic text-brown-dark sm:text-2xl">
+              El ciclo es continuo: la Evolución alimenta de nuevo la
+              Construcción. El sistema mejora con el tiempo.
+            </p>
           </div>
         </section>
       </main>

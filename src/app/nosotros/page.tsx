@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -11,39 +12,65 @@ export const metadata: Metadata = {
     "Conocé la historia, el equipo y los valores detrás de Fluex Media.",
 };
 
-const values = [
+const comparison = [
   {
-    title: "Estrategia antes que fórmulas",
-    description:
-      "Cada marca es distinta. Empezamos entendiendo el negocio, no aplicando una plantilla.",
+    them: "Ejecutan sin entender el negocio",
+    us: "Nos involucramos antes de hacer un solo anuncio",
   },
   {
-    title: "Resultados medibles",
-    description:
-      "Trabajamos con objetivos claros y métricas concretas, no con promesas vagas.",
+    them: "Mensajes genéricos",
+    us: "Copy basado en el lenguaje real de la audiencia",
   },
   {
-    title: "Cercanía real",
-    description:
-      "Nos involucramos con cada cliente como si su marca fuera parte de la nuestra.",
+    them: "Métricas de vanidad",
+    us: "Reportes orientados a decisiones de negocio",
+  },
+  {
+    them: "Solo negocios digitales",
+    us: "Cualquier negocio que quiera crecer",
+  },
+  {
+    them: "IA como buzzword",
+    us: "IA integrada en cada paso del proceso",
+  },
+  {
+    them: "Proceso opaco",
+    us: "Sistema documentado y transferible",
   },
 ];
 
 const ice = [
   {
     letter: "I",
-    title: "Impacto",
-    description: "Cuánto puede mover la aguja para tu marca.",
+    title: "Inmersión",
+    description: "Entendemos el negocio como si fuéramos parte de él.",
   },
   {
     letter: "C",
-    title: "Confianza",
-    description: "Qué tan seguros estamos de que va a funcionar.",
+    title: "Construcción",
+    description: "Armamos la estrategia específica para tu empresa.",
   },
   {
     letter: "E",
-    title: "Facilidad",
-    description: "Cuánto esfuerzo lleva implementarlo ya.",
+    title: "Evolución",
+    description: "Medimos, optimizamos y escalamos lo que funciona.",
+  },
+];
+
+const values = [
+  {
+    title: "Honestidad brutal",
+    description:
+      "Decimos lo difícil a tiempo, no después de tres meses.",
+  },
+  {
+    title: "Calidad sobre cantidad",
+    description: "Límite de clientes por equipo, intencional.",
+  },
+  {
+    title: "Accountability",
+    description:
+      "Si algo salió mal, lo decimos y proponemos cómo corregirlo.",
   },
 ];
 
@@ -59,8 +86,9 @@ export default function NosotrosPage() {
               <span className="text-xs uppercase tracking-[0.3em] text-accent">
                 Nosotros
               </span>
-              <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
-                Una agencia hecha por gente obsesionada con el crecimiento.
+              <h1 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+                Una agencia hecha por gente obsesionada con el{" "}
+                <span className="text-accent">crecimiento</span>.
               </h1>
               <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
                 Fluex Media nació de una idea simple: la mayoría de las
@@ -88,50 +116,63 @@ export default function NosotrosPage() {
         </section>
 
         <section className="relative overflow-hidden px-6 pb-24 sm:px-10">
-          <SectionBackdrop variant="page" />
-          <div className="relative z-10 mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center md:gap-14">
-            <Reveal variant="slide-right" className="overflow-hidden rounded-2xl">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=900&auto=format&fit=crop"
-                  alt="Pantalla de TV mostrando Netflix junto a otras plataformas de streaming"
-                  fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal variant="slide-left">
+          <SectionBackdrop variant="about" />
+          <div className="relative z-10 mx-auto max-w-4xl">
+            <Reveal variant="fade">
               <span className="text-xs uppercase tracking-[0.3em] text-accent">
-                El mercado ya no es el mismo
+                Cómo nos diferenciamos
               </span>
-              <h2 className="mt-4 font-display text-2xl font-medium uppercase leading-tight text-ink sm:text-3xl">
-                Netflix no ganó por tener las mejores películas.
+              <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
+                Las agencias tradicionales ejecutan.{" "}
+                <span className="text-accent">Nosotros entendemos</span> el
+                negocio primero.
               </h2>
-              <p className="mt-4 text-sm text-brown-dark sm:text-base">
-                Ganó por entender antes que nadie que la gente ya no quería
-                esperar. Hoy pasa lo mismo con la atención: se mueve rápido,
-                entre plataformas, y las marcas que no se adaptan quedan
-                afuera. Nuestro equipo son especialistas en marketing — no
-                generalistas — y diseñamos cada estrategia pensando en cómo
-                consume tu público hoy, no en cómo consumía hace cinco años.
+              <p className="mt-4 max-w-2xl text-sm text-brown-dark sm:text-base">
+                Reciben un brief, ejecutan una campaña y entregan un reporte.
+                Nosotros nos involucramos en el negocio para entenderlo desde
+                dentro: antes de diseñar un anuncio, entendemos el producto,
+                el cliente ideal, la competencia y el momento del mercado.
               </p>
             </Reveal>
+            <div className="mt-10 overflow-hidden rounded-2xl border border-brown-dark/10">
+              <div className="grid grid-cols-2 bg-cream-soft text-xs font-medium uppercase tracking-[0.2em] text-brown-dark">
+                <div className="px-5 py-3">Agencia tradicional</div>
+                <div className="px-5 py-3 text-accent">Fluex Media</div>
+              </div>
+              {comparison.map((row, index) => (
+                <Reveal
+                  key={row.them}
+                  variant={index % 2 === 0 ? "slide-left" : "slide-right"}
+                >
+                  <div className="grid grid-cols-2 border-t border-brown-dark/10 text-sm">
+                    <div className="px-5 py-4 text-brown-dark/70">
+                      {row.them}
+                    </div>
+                    <div className="border-l border-brown-dark/10 px-5 py-4 font-medium text-ink">
+                      {row.us}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="px-6 pb-24 sm:px-10">
           <div className="mx-auto max-w-4xl">
             <span className="text-xs uppercase tracking-[0.3em] text-accent">
-              Cómo decidimos
+              Cómo trabajamos
             </span>
-            <h2 className="mt-4 font-display text-2xl font-medium uppercase leading-tight text-ink sm:text-3xl">
-              Método ICE: qué hacer primero
+            <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
+              Método <span className="text-accent">ICE</span>
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-brown-dark sm:text-base">
-              Antes de ejecutar, priorizamos cada idea con el método ICE —
-              así evitamos perder tiempo en cosas que suenan bien pero no
-              mueven resultados.
+              Tres fases, en este orden, con cada cliente. No es una fórmula:
+              es una forma de pensar el crecimiento —{" "}
+              <Link href="/metodologia" className="text-accent underline underline-offset-2">
+                ver el proceso completo
+              </Link>
+              .
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
               {ice.map((item) => (
@@ -142,7 +183,7 @@ export default function NosotrosPage() {
                   <span className="font-display text-3xl font-semibold text-accent">
                     {item.letter}
                   </span>
-                  <h3 className="mt-2 font-display text-base font-semibold uppercase text-ink">
+                  <h3 className="mt-2 font-display text-base font-semibold text-ink">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-sm text-brown-dark">
@@ -156,13 +197,13 @@ export default function NosotrosPage() {
 
         <section className="bg-cream-soft px-6 py-24 sm:px-10">
           <div className="mx-auto max-w-4xl">
-            <h2 className="font-display text-3xl font-medium uppercase text-ink sm:text-4xl">
+            <h2 className="font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
               Lo que nos guía
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {values.map((value) => (
                 <div key={value.title}>
-                  <h3 className="font-display text-lg font-semibold uppercase text-ink">
+                  <h3 className="font-display text-lg font-semibold text-ink">
                     {value.title}
                   </h3>
                   <p className="mt-2 text-sm text-brown-dark">

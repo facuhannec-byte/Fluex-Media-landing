@@ -19,8 +19,8 @@ export default function ContactoPage() {
               <span className="text-xs uppercase tracking-[0.3em] text-accent">
                 Contacto
               </span>
-              <h1 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-6xl">
-                Contanos qué necesita tu marca.
+              <h1 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+                Contanos qué necesita tu <span className="text-accent">marca</span>.
               </h1>
               <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
                 Completá el formulario y te respondemos en menos de 48 horas

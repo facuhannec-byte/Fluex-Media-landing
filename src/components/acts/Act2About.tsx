@@ -35,17 +35,17 @@ export default function Act2About() {
           <span className="text-xs uppercase tracking-[0.3em] text-accent">
             Quiénes somos
           </span>
-          <h2 className="mt-4 font-display text-4xl font-medium uppercase leading-[1.1] text-ink sm:text-5xl">
-            ¿Necesitás más visibilidad? ¿Más ventas? ¿Posicionarte en un
-            mercado nuevo?
+          <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
+            ¿Buscás más visibilidad? ¿Más ventas? ¿Posicionarte en un{" "}
+            <span className="text-accent">mercado nuevo</span>?
           </h2>
           <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
-            Trabajamos mediante estrategia, contenido y campañas de
-            captación medibles: auditamos tu marca, definimos el mensaje
-            que te distingue y lo llevamos a la plataforma donde realmente
-            está tu público. El resultado: más visibilidad, más consultas
-            y más ventas — lo aplicamos a empresas de cualquier rubro, sin
-            fórmulas genéricas.
+            Somos FLUEX Media, una agencia de crecimiento estratégico.
+            Ayudamos a negocios a conseguir más clientes de forma
+            predecible: diseñamos la estrategia, creamos las campañas y
+            las optimizamos de forma continua. Trabajamos con cualquier
+            empresa que tenga un producto o servicio probado — no un rubro
+            específico.
           </p>
         </Reveal>
         <div className="grid grid-cols-2 gap-4">

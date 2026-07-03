@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionBackdrop from "@/components/SectionBackdrop";
+import { LOGO_ARROW_POINTS, LOGO_LINE_PATH, LOGO_VIEWBOX } from "@/components/Logo";
 
 const FLUEX = "Fluex".split("");
 const MEDIA = "Media".split("");
@@ -16,6 +17,7 @@ export default function HookDoors() {
   const leftPanelRef = useRef<HTMLDivElement>(null);
   const rightPanelRef = useRef<HTMLDivElement>(null);
   const arrowPathRef = useRef<SVGPathElement>(null);
+  const arrowHeadRef = useRef<SVGPolygonElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
   const labelLetterRefs = useRef<Array<HTMLSpanElement | null>>(
     Array(LABEL.length + LABEL_A.length).fill(null),
@@ -32,6 +34,7 @@ export default function HookDoors() {
       gsap.set(letters, { opacity: 0, y: 16 });
       gsap.set(labelLetters, { opacity: 0, y: 10 });
       gsap.set(arrowPathRef.current, { strokeDashoffset: 1 });
+      gsap.set(arrowHeadRef.current, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -49,8 +52,14 @@ export default function HookDoors() {
         .fromTo(
           arrowPathRef.current,
           { strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 0.3, ease: "power1.inOut" },
-          0.1,
+          { strokeDashoffset: 0, duration: 0.32, ease: "power1.inOut" },
+          0.08,
+        )
+        .fromTo(
+          arrowHeadRef.current,
+          { opacity: 0, scale: 0.4 },
+          { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" },
+          0.36,
         );
 
       labelLetters.forEach((el, index) => {
@@ -59,14 +68,14 @@ export default function HookDoors() {
           el,
           { opacity: 0, y: 10 },
           { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-          0.3 + index * 0.02,
+          0.44 + index * 0.02,
         );
       });
 
       letters.forEach((el, index) => {
         if (!el) return;
         const isAccent = index === 4;
-        const position = 0.55 + index * 0.03;
+        const position = 0.72 + index * 0.03;
         if (isAccent) {
           tl.fromTo(
             el,
@@ -97,11 +106,11 @@ export default function HookDoors() {
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-6 text-center text-cream">
           <SectionBackdrop variant="cta" />
           <svg
-            viewBox="0 0 120 36"
-            className="h-7 w-24 text-accent-soft"
+            viewBox={LOGO_VIEWBOX}
+            className="h-10 w-auto text-accent-soft sm:h-12"
             fill="none"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={7}
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden
@@ -110,7 +119,13 @@ export default function HookDoors() {
               ref={arrowPathRef}
               pathLength={1}
               strokeDasharray={1}
-              d="M4 28 C 32 2, 72 2, 96 14 M86 6 L98 14 L88 24"
+              d={LOGO_LINE_PATH}
+            />
+            <polygon
+              ref={arrowHeadRef}
+              points={LOGO_ARROW_POINTS}
+              fill="currentColor"
+              stroke="none"
             />
           </svg>
           <span className="flex gap-2 text-xs uppercase tracking-[0.4em] text-accent-soft">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Wordmark from "@/components/Wordmark";
+import Logo from "@/components/Logo";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Footer() {
@@ -8,10 +8,8 @@ export default function Footer() {
       <SectionBackdrop variant="page" />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <div>
-          <p className="font-display text-lg font-semibold text-ink">
-            <Wordmark text="Fluex Media" />
-          </p>
-          <p className="mt-1 text-sm text-brown-dark">
+          <Logo iconClassName="h-6" wordmarkClassName="text-lg" />
+          <p className="mt-2 text-sm text-brown-dark">
             Crecimiento y captación de atención para tu marca.
           </p>
         </div>
