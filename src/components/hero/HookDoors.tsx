@@ -39,7 +39,11 @@ export default function HookDoors() {
 
       gsap.set(letters, { opacity: 0, y: 16 });
       gsap.set(labelLetters, { opacity: 0, y: 10 });
-      gsap.set(sketchPathRef.current, { strokeDashoffset: 1 });
+      // GSAP redondea las propiedades CSS numéricas al píxel entero: con un
+      // rango de 0 a 1 (pathLength=1) el trazo queda binario (0 o 1px, sin
+      // pasos intermedios) y se ve como un flash. Escalar a 0-1000 le da
+      // resolución de sobra para que el dibujo se vea gradual.
+      gsap.set(sketchPathRef.current, { strokeDashoffset: 1000 });
       gsap.set(iconImageRef.current, { opacity: 0 });
 
       const tl = gsap.timeline({
@@ -60,8 +64,8 @@ export default function HookDoors() {
         .to(hintRef.current, { opacity: 0, duration: 0.08 }, 0)
         .fromTo(
           sketchPathRef.current,
-          { strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 0.32, ease: "power1.inOut" },
+          { strokeDashoffset: 1000 },
+          { strokeDashoffset: 0, duration: 0.32, ease: "none" },
           0.08,
         )
         .to(sketchGroupRef.current, { opacity: 0, duration: 0.14 }, 0.4)
@@ -129,8 +133,8 @@ export default function HookDoors() {
             >
               <path
                 ref={sketchPathRef}
-                pathLength={1}
-                strokeDasharray={1}
+                pathLength={1000}
+                strokeDasharray={1000}
                 d={SKETCH_PATH}
               />
             </svg>

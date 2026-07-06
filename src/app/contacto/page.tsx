@@ -69,6 +69,52 @@ export default function ContactoPage() {
                 </a>
                 <p>Buenos Aires, Argentina</p>
               </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/5493875938541"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-cream"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.6}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden
+                  >
+                    <path d="M3 20l1.3-3.9A7.5 7.5 0 1 1 8.5 19L3 20Z" />
+                    <path d="M8.7 9.6c0 3.1 2.6 5.7 5.7 5.7" />
+                  </svg>
+                  Escribinos por WhatsApp
+                </a>
+                <a
+                  href="https://instagram.com/fluex.media"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-brown-dark/20 px-5 py-2.5 text-sm font-medium text-brown-dark transition-colors hover:border-accent hover:text-accent"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.6}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M17.5 6.5h.01" />
+                  </svg>
+                  @fluex.media
+                </a>
+              </div>
             </div>
             <ContactForm />
           </div>

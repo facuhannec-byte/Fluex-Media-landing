@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -33,6 +34,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

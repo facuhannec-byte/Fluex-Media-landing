@@ -65,6 +65,14 @@ export default function Footer() {
           >
             +54 9 387 593 8541
           </a>
+          <a
+            href="https://instagram.com/fluex.media"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block transition-colors hover:text-accent"
+          >
+            @fluex.media
+          </a>
         </div>
       </div>
     </footer>

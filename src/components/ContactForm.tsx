@@ -92,8 +92,16 @@ export default function ContactForm() {
 
       {status === "error" && (
         <p className="text-sm text-red-700">
-          No se pudo enviar el mensaje. Probá de nuevo o escribinos
-          directamente a fluex.mediax@gmail.com.
+          No se pudo enviar el mensaje — escribinos directamente a{" "}
+          <a
+            href="https://instagram.com/fluex.media"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            @fluex.media
+          </a>{" "}
+          en Instagram.
         </p>
       )}
 
