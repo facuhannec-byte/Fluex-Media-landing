@@ -4,63 +4,78 @@ import SectionBackdrop from "@/components/SectionBackdrop";
 
 const plans = [
   {
-    goal: "Recién empezando",
-    plan: "Plan Impulso",
-    intro: "Tu marca necesita empezar a ocupar espacio.",
-    services: [
-      {
-        name: "Estrategia",
-        description:
-          "Diagnóstico del negocio, definición de objetivos y roadmap de 30/60/90 días.",
-      },
-      {
-        name: "Creatividad",
-        description:
-          "Copy, guiones y ángulos creativos alineados con datos de audiencia.",
-      },
+    name: "Plan Impulso",
+    price: "USD 300",
+    hook: "Tu primer sistema de clientes, funcionando.",
+    forWhom:
+      "Para negocios locales que quieren empezar a atraer clientes con publicidad que sí funciona.",
+    leadIn: null as string | null,
+    includes: [
+      "Investigación de mercado y estrategia personalizada",
+      "Configuración completa de campañas en Meta",
+      "4-6 creativos mensuales (videos, imágenes o carruseles)",
+      "Optimización semanal",
+      "Reporte mensual + reunión mensual",
     ],
+    featured: false,
   },
   {
-    goal: "Ocupando espacio",
-    plan: "Plan Crecimiento",
-    intro: "Ya tenés base. Ahora hace falta captar de forma predecible.",
-    services: [
-      {
-        name: "Media Buying",
-        description:
-          "Campañas pagas en Meta Ads y Google Ads: estructuradas, testeables, escalables.",
-      },
-      {
-        name: "Growth Marketing",
-        description:
-          "Funnels, retargeting y optimización de landing pages para mejorar conversión.",
-      },
+    name: "Plan Escala",
+    price: "USD 600",
+    hook: "Ya vendés. Ahora crecé en serio.",
+    forWhom:
+      "Para negocios que ya venden y quieren crecimiento constante y medible.",
+    leadIn: "Todo lo de Impulso, más:",
+    includes: [
+      "8-12 creativos mensuales",
+      "Más campañas simultáneas + tests A/B continuos",
+      "Remarketing",
+      "Optimizaciones más frecuentes",
+      "Reuniones quincenales",
+      "Análisis competitivo continuo",
     ],
+    featured: true,
   },
   {
-    goal: "Con presencia, generando contenido",
-    plan: "Plan Escala",
-    intro: "Buscás llevar lo que ya funciona al siguiente nivel.",
-    services: [
-      {
-        name: "IA Aplicada",
-        description:
-          "IA para acelerar investigación, estrategia y producción, sin sacrificar criterio humano.",
-      },
-      {
-        name: "Sistemas y Optimización",
-        description:
-          "Tracking, atribución y flujos de trabajo. Orden dentro del caos.",
-      },
+    name: "Plan Growth",
+    price: "USD 1.000",
+    hook: "Escalá sin techo.",
+    forWhom: "Para empresas listas para crecer de forma agresiva y sostenida.",
+    leadIn: "Todo lo de Escala, más:",
+    includes: [
+      "Estrategia integral de crecimiento",
+      "Múltiples líneas de campañas + embudos completos",
+      "Mayor capacidad creativa",
+      "Automatizaciones (según proyecto)",
+      "Asesoramiento estratégico continuo",
+      "Reuniones semanales + soporte prioritario",
     ],
+    featured: false,
   },
 ];
+
+function CheckIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-0.5 h-4 w-4 shrink-0 text-accent"
+      aria-hidden
+    >
+      <path d="M5 12.5 9.5 17 19 7" />
+    </svg>
+  );
+}
 
 export default function Act4Plans() {
   return (
     <section
       id="planes"
-      className="relative min-h-screen overflow-hidden bg-cream-soft px-6 py-24 sm:px-10"
+      className="relative overflow-hidden bg-cream-soft px-6 py-24 sm:px-10"
     >
       <SectionBackdrop variant="plans" />
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -69,47 +84,104 @@ export default function Act4Plans() {
             Planes
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
-            Cada negocio <span className="text-accent">crece distinto</span>.
-            Tu plan también debería.
+            No vendemos anuncios.{" "}
+            <span className="text-accent">
+              Diseñamos sistemas de adquisición de clientes
+            </span>
+            .
           </h2>
+          <p className="mt-3 text-sm text-brown-dark sm:text-base">
+            Todo se trabaja bajo el Método ICE — el mismo proceso, aplicado
+            con distinta profundidad según dónde estés.
+          </p>
         </Reveal>
+
         <div className="mt-14 grid gap-8 lg:grid-cols-3">
           {plans.map((item, index) => (
             <Reveal
-              key={item.plan}
+              key={item.name}
               variant={index % 2 === 0 ? "slide-left" : "slide-right"}
               delay={index * 0.1}
+              className="h-full"
             >
-              <div className="flex h-full flex-col rounded-3xl border border-brown-dark/10 bg-cream p-10">
-                <span className="text-sm font-medium text-brown-dark">
-                  {item.goal}
-                </span>
-                <h3 className="mt-3 font-display text-3xl font-semibold text-ink">
-                  {item.plan}
+              <div
+                className={`relative flex h-full flex-col rounded-3xl border p-8 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-10 ${
+                  item.featured
+                    ? "border-accent/40 bg-accent/[0.06] shadow-lg"
+                    : "border-brown-dark/10 bg-cream"
+                }`}
+              >
+                {item.featured && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-cream">
+                    Recomendado
+                  </span>
+                )}
+
+                <h3 className="text-sm font-medium text-brown-dark">
+                  {item.name}
                 </h3>
-                <p className="mt-3 text-sm text-brown-dark">{item.intro}</p>
-                <div className="mt-8 flex-1 space-y-5 border-t border-brown-dark/10 pt-6">
-                  {item.services.map((service) => (
-                    <div key={service.name}>
-                      <p className="font-display text-lg font-semibold text-ink">
-                        {service.name}
-                      </p>
-                      <p className="mt-1 text-sm text-brown-dark">
-                        {service.description}
-                      </p>
-                    </div>
-                  ))}
+                <p className="mt-3 font-display text-2xl font-semibold leading-snug text-ink">
+                  {item.hook}
+                </p>
+                <p className="mt-5 font-display text-4xl font-semibold text-ink">
+                  {item.price}
+                  <span className="ml-1 font-sans text-base font-normal text-brown-dark">
+                    /mes
+                  </span>
+                </p>
+                <p className="mt-3 text-sm text-brown-dark">{item.forWhom}</p>
+
+                <div className="mt-8 flex-1 border-t border-brown-dark/10 pt-6">
+                  {item.leadIn && (
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-brown-dark/70">
+                      {item.leadIn}
+                    </p>
+                  )}
+                  <ul className="space-y-3">
+                    {item.includes.map((line) => (
+                      <li
+                        key={line}
+                        className="flex items-start gap-2 text-sm text-brown-dark"
+                      >
+                        <CheckIcon />
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
                 <Link
                   href="/contacto"
-                  className="mt-8 text-sm font-medium text-accent transition-colors hover:text-brown-dark"
+                  className="mt-8 inline-flex items-center justify-center rounded-full border border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-cream"
                 >
-                  Ver si me sirve →
+                  Quiero este plan →
                 </Link>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal variant="fade" delay={0.2}>
+          <p className="mx-auto mt-10 max-w-3xl text-center text-sm text-brown-dark">
+            Todos los planes incluyen diagnóstico inicial, investigación de
+            mercado, gestión profesional de Meta Ads, optimización continua y
+            reportes.
+          </p>
+          <p className="mx-auto mt-3 max-w-3xl text-center text-xs text-brown-dark/60">
+            El presupuesto publicitario se paga directo a Meta, aparte de
+            nuestros honorarios. Desarrollo web y producción profesional
+            (actores, estudio) se cotizan por separado.
+          </p>
+        </Reveal>
+
+        <Reveal variant="rise" delay={0.3} className="mt-10 flex justify-center">
+          <Link
+            href="/contacto"
+            className="inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-cream transition-colors hover:bg-brown-dark"
+          >
+            Reservá tu Auditoría Estratégica gratuita (20-30 min) →
+          </Link>
+        </Reveal>
       </div>
     </section>
   );
