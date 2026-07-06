@@ -1,6 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import Wordmark from "@/components/Wordmark";
-import { LogoIcon } from "@/components/Logo";
 
 const links = [
   { href: "/#planes", label: "Planes" },
@@ -13,12 +12,15 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-brown-dark/10 bg-cream/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink"
-        >
-          <LogoIcon className="h-5 w-auto text-accent" />
-          <Wordmark text="Fluex Media" />
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/fluex-logo-full.png"
+            alt="Fluex Media"
+            width={709}
+            height={424}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
         <ul className="flex items-center gap-6 text-sm font-medium text-brown-dark sm:gap-8">
           {links.map((link) => (

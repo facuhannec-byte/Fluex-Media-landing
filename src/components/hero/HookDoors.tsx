@@ -1,10 +1,15 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionBackdrop from "@/components/SectionBackdrop";
-import { LOGO_ARROW_POINTS, LOGO_LINE_PATH, LOGO_VIEWBOX } from "@/components/Logo";
+
+// Trazo genérico simple (no intenta calcar la flecha del logo real) que
+// se dibuja y luego hace crossfade hacia /fluex-logo-icon.png.
+const SKETCH_VIEWBOX = "0 0 100 60";
+const SKETCH_PATH = "M4 54 L38 24 L58 40 L96 6";
 
 const FLUEX = "Fluex".split("");
 const MEDIA = "Media".split("");
@@ -16,8 +21,9 @@ export default function HookDoors() {
   const sceneRef = useRef<HTMLElement>(null);
   const leftPanelRef = useRef<HTMLDivElement>(null);
   const rightPanelRef = useRef<HTMLDivElement>(null);
-  const arrowPathRef = useRef<SVGPathElement>(null);
-  const arrowHeadRef = useRef<SVGPolygonElement>(null);
+  const sketchPathRef = useRef<SVGPathElement>(null);
+  const sketchGroupRef = useRef<SVGSVGElement>(null);
+  const iconImageRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
   const labelLetterRefs = useRef<Array<HTMLSpanElement | null>>(
     Array(LABEL.length + LABEL_A.length).fill(null),
@@ -33,8 +39,8 @@ export default function HookDoors() {
 
       gsap.set(letters, { opacity: 0, y: 16 });
       gsap.set(labelLetters, { opacity: 0, y: 10 });
-      gsap.set(arrowPathRef.current, { strokeDashoffset: 1 });
-      gsap.set(arrowHeadRef.current, { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" });
+      gsap.set(sketchPathRef.current, { strokeDashoffset: 1 });
+      gsap.set(iconImageRef.current, { opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -50,16 +56,17 @@ export default function HookDoors() {
         .to(rightPanelRef.current, { xPercent: 100, ease: "none", duration: 1 }, 0)
         .to(hintRef.current, { opacity: 0, duration: 0.08 }, 0)
         .fromTo(
-          arrowPathRef.current,
+          sketchPathRef.current,
           { strokeDashoffset: 1 },
           { strokeDashoffset: 0, duration: 0.32, ease: "power1.inOut" },
           0.08,
         )
+        .to(sketchGroupRef.current, { opacity: 0, duration: 0.14 }, 0.4)
         .fromTo(
-          arrowHeadRef.current,
-          { opacity: 0, scale: 0.7 },
-          { opacity: 1, scale: 1, duration: 0.14, ease: "power2.out" },
-          0.38,
+          iconImageRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.14 },
+          0.4,
         );
 
       labelLetters.forEach((el, index) => {
@@ -105,29 +112,39 @@ export default function HookDoors() {
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-6 text-center text-cream">
           <SectionBackdrop variant="cta" />
-          <svg
-            viewBox={LOGO_VIEWBOX}
-            className="h-10 w-auto text-accent-soft sm:h-12"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={6.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <path
-              ref={arrowPathRef}
-              pathLength={1}
-              strokeDasharray={1}
-              d={LOGO_LINE_PATH}
-            />
-            <polygon
-              ref={arrowHeadRef}
-              points={LOGO_ARROW_POINTS}
-              fill="currentColor"
-              stroke="none"
-            />
-          </svg>
+          <div className="relative h-10 w-16 sm:h-12 sm:w-20">
+            <svg
+              ref={sketchGroupRef}
+              viewBox={SKETCH_VIEWBOX}
+              className="absolute inset-0 h-full w-full text-accent-soft"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={7}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path
+                ref={sketchPathRef}
+                pathLength={1}
+                strokeDasharray={1}
+                d={SKETCH_PATH}
+              />
+            </svg>
+            <div
+              ref={iconImageRef}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <Image
+                src="/fluex-logo-icon.png"
+                alt=""
+                width={477}
+                height={307}
+                className="h-full w-auto"
+                aria-hidden
+              />
+            </div>
+          </div>
           <span className="flex gap-2 text-xs uppercase tracking-[0.4em] text-accent-soft">
             <span className="flex">
               {LABEL.map((char, i) => (

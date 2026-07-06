@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/components/Logo";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Footer() {
@@ -8,8 +8,14 @@ export default function Footer() {
       <SectionBackdrop variant="page" />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <div>
-          <Logo iconClassName="h-6" wordmarkClassName="text-lg" />
-          <p className="mt-2 text-sm text-brown-dark">
+          <Image
+            src="/fluex-logo-full.png"
+            alt="Fluex Media"
+            width={709}
+            height={424}
+            className="h-12 w-auto"
+          />
+          <p className="mt-3 text-sm text-brown-dark">
             Crecimiento y captación de atención para tu marca.
           </p>
         </div>
