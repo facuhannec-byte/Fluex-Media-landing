@@ -47,7 +47,10 @@ export default function HookDoors() {
           trigger: wrapperRef.current,
           start: "top top",
           end: "bottom bottom",
-          scrub: 0.5,
+          // Un scrub más alto = más "colchón": aunque el gesto de scroll sea
+          // muy rápido, la animación tarda al menos este tiempo en alcanzar
+          // el progreso real, dando más margen para leer "Fluex Media".
+          scrub: 0.9,
           pin: sceneRef.current,
         },
       });

@@ -177,9 +177,26 @@ export default function Act4Plans() {
         <Reveal variant="rise" delay={0.3} className="mt-10 flex justify-center">
           <Link
             href="/contacto"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-cream transition-colors hover:bg-brown-dark"
+            className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-ink shadow-lg shadow-accent/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft hover:shadow-xl"
           >
-            Reservá tu Auditoría Estratégica gratuita (20-30 min) →
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5 shrink-0"
+              aria-hidden
+            >
+              <rect x="3" y="5" width="18" height="16" rx="3" />
+              <path d="M3 10h18M8 3v4M16 3v4" />
+              <path d="m9 15 2 2 4-4" />
+            </svg>
+            Reservá tu Auditoría Estratégica gratuita
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
           </Link>
         </Reveal>
       </div>

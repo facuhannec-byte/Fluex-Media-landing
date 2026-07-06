@@ -26,8 +26,47 @@ export default function ContactoPage() {
                 Completá el formulario y te respondemos en menos de 48 horas
                 para agendar una primera charla sin compromiso.
               </p>
-              <div className="mt-10 space-y-2 text-sm text-brown-dark">
-                <p>hola@fluexmedia.com</p>
+              <div className="mt-10 space-y-3 text-sm text-brown-dark">
+                <a
+                  href="mailto:fluex.mediax@gmail.com"
+                  className="flex items-center gap-2 transition-colors hover:text-accent"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m4 7 8 6 8-6" />
+                  </svg>
+                  fluex.mediax@gmail.com
+                </a>
+                <a
+                  href="https://wa.me/5493875938541"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 transition-colors hover:text-accent"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden
+                  >
+                    <path d="M4 20l1.3-3.9A7.5 7.5 0 1 1 8.5 19L4 20Z" />
+                    <path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5" />
+                  </svg>
+                  +54 9 387 593 8541
+                </a>
                 <p>Buenos Aires, Argentina</p>
               </div>
             </div>

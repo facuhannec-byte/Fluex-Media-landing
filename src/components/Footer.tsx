@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-brown-dark/10 bg-cream-soft">
       <SectionBackdrop variant="page" />
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 sm:flex-row sm:items-start sm:justify-between sm:px-10">
         <div>
           <Image
             src="/fluex-logo-full.png"
@@ -50,6 +50,22 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
+        <div className="space-y-1.5 text-sm text-brown-dark">
+          <a
+            href="mailto:fluex.mediax@gmail.com"
+            className="block transition-colors hover:text-accent"
+          >
+            fluex.mediax@gmail.com
+          </a>
+          <a
+            href="https://wa.me/5493875938541"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block transition-colors hover:text-accent"
+          >
+            +54 9 387 593 8541
+          </a>
+        </div>
       </div>
     </footer>
   );
