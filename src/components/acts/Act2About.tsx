@@ -1,44 +1,33 @@
 import Image from "next/image";
+import { FaFacebook, FaGoogle, FaInstagram, FaTiktok } from "react-icons/fa";
 import Reveal from "@/components/Reveal";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1000&auto=format&fit=crop",
-    alt: "Espacio de trabajo creativo con moodboard y notas en pantalla",
+    src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000&auto=format&fit=crop",
+    alt: "Bocetos de interfaces dibujados a mano con acuarela",
     caption: "Estrategia creativa",
     className: "col-span-2 aspect-[16/10]",
     variant: "fade" as const,
   },
   {
-    src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop",
-    alt: "Gráfico de crecimiento en la pantalla de una laptop",
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    alt: "Dashboard de analítica con gráficos en la pantalla de una laptop",
     caption: "Resultados medibles",
     className: "aspect-square",
     variant: "slide-left" as const,
   },
 ];
 
-// Solo las plataformas donde Fluex opera realmente — nada de logos
-// genéricos de una foto de stock (Discord, Figma, Netflix, Spotify...).
-const platformIcons = {
-  facebook: (
-    <path d="M16 3h-2.5A4.5 4.5 0 0 0 9 7.5V10H7v4h2v7h4v-7h2.6l.4-4H13V7.8c0-.6.4-1 1-1H16Z" />
-  ),
-  instagram: (
-    <>
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <path d="M17.5 6.5h.01" />
-    </>
-  ),
-  google: (
-    <path d="M21 12.2c0-.7-.1-1.4-.2-2H12v4h5a4.6 4.6 0 0 1-4.8 3.4A5.6 5.6 0 0 1 12 6.6a5.5 5.5 0 0 1 3.5 1.3l2.8-2.8A9.5 9.5 0 1 0 21 12.2Z" />
-  ),
-  tiktok: (
-    <path d="M10 20a4 4 0 1 1 0-8h1V4h3.2c.3 2.4 1.9 4 4.3 4.3V11c-1.6 0-3-.5-4.3-1.4V16a5 5 0 0 1-8.7 3.4" />
-  ),
-};
+// Solo las plataformas donde Fluex opera realmente — íconos de marca
+// reales (react-icons), no recreados a mano.
+const platformIcons = [
+  { name: "facebook", Icon: FaFacebook },
+  { name: "instagram", Icon: FaInstagram },
+  { name: "google", Icon: FaGoogle },
+  { name: "tiktok", Icon: FaTiktok },
+];
 
 export default function Act2About() {
   return (
@@ -78,16 +67,25 @@ export default function Act2About() {
               </p>
             </div>
           </div>
-          <p className="mt-8 max-w-md text-sm text-brown-dark sm:text-base">
-            Somos FLUEX Media, una agencia de crecimiento estratégico.
-            Ayudamos a negocios a conseguir más clientes de forma
-            predecible mediante estrategia, media buying, growth
-            marketing, creatividad y análisis de datos — diseñamos la
-            campaña, la ejecutamos y la optimizamos de forma continua. No
-            trabajamos por rubro, trabajamos por potencial: cualquier
-            empresa con un producto o servicio ya probado que quiera
-            construir un sistema predecible de adquisición de clientes.
-          </p>
+          <div className="mt-8 max-w-md space-y-4 text-sm leading-relaxed text-brown-dark sm:text-base">
+            <p>
+              Somos FLUEX Media, una agencia de crecimiento estratégico.
+              Ayudamos a negocios a conseguir más clientes{" "}
+              <span className="text-accent">de forma predecible</span>{" "}
+              mediante estrategia, media buying, growth marketing,
+              creatividad y análisis de datos — diseñamos la campaña, la
+              ejecutamos y la optimizamos de forma continua.
+            </p>
+            <p>
+              No trabajamos por rubro, trabajamos por potencial: cualquier
+              empresa con un producto o servicio ya probado que quiera
+              construir un{" "}
+              <span className="text-accent">
+                sistema predecible de adquisición
+              </span>{" "}
+              de clientes.
+            </p>
+          </div>
         </Reveal>
         <div className="grid grid-cols-2 gap-4">
           {photos.map((photo) => (
@@ -113,23 +111,12 @@ export default function Act2About() {
           <Reveal variant="slide-right" className="aspect-square">
             <div className="relative h-full w-full overflow-hidden rounded-2xl bg-brown-dark">
               <div className="grid h-full grid-cols-2 gap-3 p-6">
-                {Object.entries(platformIcons).map(([name, path]) => (
+                {platformIcons.map(({ name, Icon }) => (
                   <span
                     key={name}
                     className="flex items-center justify-center rounded-xl bg-cream/10"
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={1.4}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6 text-cream sm:h-7 sm:w-7"
-                      aria-hidden
-                    >
-                      {path}
-                    </svg>
+                    <Icon className="h-6 w-6 text-cream sm:h-7 sm:w-7" aria-hidden />
                   </span>
                 ))}
               </div>
