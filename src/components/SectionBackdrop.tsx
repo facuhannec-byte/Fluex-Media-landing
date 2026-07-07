@@ -166,6 +166,14 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
       place("google", "bl", "sm", "animate-spin-slow"),
     ],
   },
+  ice: {
+    tone: "text-brown-dark",
+    placements: [
+      place("target", "tl", "lg", "animate-drift-a"),
+      place("spark", "br", "md", "animate-spin-slow"),
+      place("bars", "tr", "sm", "animate-drift-b"),
+    ],
+  },
 };
 
 export default function SectionBackdrop({
