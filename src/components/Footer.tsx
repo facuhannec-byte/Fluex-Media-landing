@@ -9,13 +9,19 @@ export default function Footer() {
       <SectionBackdrop variant="page" />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 sm:flex-row sm:items-start sm:justify-between sm:px-10">
         <div>
-          <Image
-            src="/fluex-logo-full.png"
-            alt="Fluex Media"
-            width={709}
-            height={424}
-            className="h-12 w-auto"
-          />
+          <div className="flex items-center gap-2">
+            <Image
+              src="/fluex-logo-icon.png"
+              alt=""
+              width={477}
+              height={307}
+              className="h-8 w-auto"
+              aria-hidden
+            />
+            <span className="font-display text-xl font-semibold tracking-tight text-ink">
+              Flue<span className="text-accent">x</span> Media
+            </span>
+          </div>
           <p className="mt-3 text-sm text-brown-dark">
             Crecimiento y captación de atención para tu marca.
           </p>

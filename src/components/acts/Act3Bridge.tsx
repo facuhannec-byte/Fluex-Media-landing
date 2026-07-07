@@ -28,7 +28,7 @@ export default function Act3Bridge() {
       <div className="relative z-10 flex flex-col items-center">
         <svg
           viewBox="0 0 64 48"
-          className="mb-6 h-12 w-16 text-cream/40"
+          className="mb-4 h-8 w-11 text-cream/40 sm:mb-6 sm:h-12 sm:w-16"
           fill="none"
           stroke="currentColor"
           strokeWidth={1.5}

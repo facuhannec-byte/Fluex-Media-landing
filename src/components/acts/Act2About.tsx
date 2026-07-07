@@ -121,17 +121,17 @@ export default function Act2About() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-brown-dark/55" />
-              <div className="relative grid h-full grid-cols-2 gap-3 p-6">
+              <div className="relative grid h-full grid-cols-2 gap-2.5 p-5 pb-16 sm:gap-3 sm:p-6 sm:pb-6">
                 {platformIcons.map(({ name, Icon }) => (
                   <span
                     key={name}
                     className="flex items-center justify-center rounded-xl bg-cream/10 backdrop-blur-sm"
                   >
-                    <Icon className="h-6 w-6 text-cream sm:h-7 sm:w-7" aria-hidden />
+                    <Icon className="h-5 w-5 text-cream sm:h-7 sm:w-7" aria-hidden />
                   </span>
                 ))}
               </div>
-              <span className="absolute bottom-3 left-3 rounded-full bg-ink/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cream">
+              <span className="absolute bottom-3 left-3 right-3 rounded-full bg-ink/60 px-3 py-1 text-center text-[9px] font-medium uppercase leading-snug tracking-[0.15em] text-cream sm:right-auto sm:text-left sm:text-[10px] sm:tracking-[0.2em]">
                 Presencia multiplataforma
               </span>
             </div>

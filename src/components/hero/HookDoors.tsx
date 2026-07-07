@@ -212,26 +212,26 @@ export default function HookDoors() {
 
         <div
           ref={leftPanelRef}
-          className="absolute left-0 top-0 z-10 flex h-full w-1/2 items-center justify-end overflow-hidden bg-cream pr-1"
+          className="absolute left-0 top-0 z-10 flex h-full w-1/2 items-center justify-end overflow-hidden bg-cream px-3 sm:px-4"
         >
-          <p className="font-display text-4xl font-medium leading-tight text-ink sm:text-6xl md:text-7xl">
+          <p className="text-right font-display text-2xl font-medium leading-tight text-ink sm:text-6xl md:text-7xl">
             Tu empresa está
           </p>
         </div>
         <div
           ref={rightPanelRef}
-          className="absolute right-0 top-0 z-10 flex h-full w-1/2 items-center justify-start overflow-hidden bg-cream pl-1"
+          className="absolute right-0 top-0 z-10 flex h-full w-1/2 items-center justify-start overflow-hidden bg-cream px-3 sm:px-4"
         >
-          <p className="font-display text-4xl font-medium leading-tight text-ink sm:text-6xl md:text-7xl">
+          <p className="text-left font-display text-2xl font-medium leading-tight text-ink sm:text-6xl md:text-7xl">
             por crecer.
           </p>
         </div>
 
         <div
           ref={hintRef}
-          className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-brown-dark"
+          className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-brown-dark sm:bottom-10"
         >
-          <span className="text-xs uppercase tracking-[0.3em]">
+          <span className="whitespace-nowrap text-[11px] uppercase tracking-[0.25em] sm:text-xs sm:tracking-[0.3em]">
             Deslizá para continuar
           </span>
           <span aria-hidden className="animate-bounce-y text-xl">
