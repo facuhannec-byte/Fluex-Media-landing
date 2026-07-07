@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Footer() {
@@ -61,8 +62,9 @@ export default function Footer() {
             href="https://wa.me/5493875938541"
             target="_blank"
             rel="noopener noreferrer"
-            className="block transition-colors hover:text-accent"
+            className="flex items-center gap-2 transition-colors hover:text-accent"
           >
+            <FaWhatsapp className="h-4 w-4 shrink-0" aria-hidden />
             +54 9 387 593 8541
           </a>
           <a
