@@ -1,9 +1,30 @@
+"use client";
+
+import { motion } from "framer-motion";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Act3Bridge() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brown-dark px-6 text-center text-cream">
       <SectionBackdrop variant="bridge" />
+      <motion.svg
+        viewBox="0 0 100 60"
+        className="pointer-events-none absolute inset-0 z-0 m-auto h-2/3 w-2/3 text-accent opacity-[0.12] sm:h-1/2 sm:w-1/2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <motion.path
+          d="M4 54 L38 24 L58 40 L96 6"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 2.2, ease: "easeInOut" }}
+        />
+      </motion.svg>
       <div className="relative z-10 flex flex-col items-center">
         <svg
           viewBox="0 0 64 48"

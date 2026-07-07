@@ -5,20 +5,23 @@ import SectionBackdrop from "@/components/SectionBackdrop";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000&auto=format&fit=crop",
-    alt: "Bocetos de interfaces dibujados a mano con acuarela",
+    src: "https://images.unsplash.com/photo-1677506050626-90651f770d0a?q=80&w=1000&auto=format&fit=crop",
+    alt: "Notas adhesivas naranjas y celestes sobre una pizarra de planificación",
     caption: "Estrategia creativa",
     className: "col-span-2 aspect-[16/10]",
     variant: "fade" as const,
   },
   {
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    alt: "Dashboard de analítica con gráficos en la pantalla de una laptop",
+    src: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=800&auto=format&fit=crop",
+    alt: "Gráfico de crecimiento en la pantalla de una laptop",
     caption: "Resultados medibles",
     className: "aspect-square",
     variant: "slide-left" as const,
   },
 ];
+
+const platformsBg =
+  "https://images.unsplash.com/photo-1755028198911-00b692a5b461?q=80&w=800&auto=format&fit=crop";
 
 // Solo las plataformas donde Fluex opera realmente — íconos de marca
 // reales (react-icons), no recreados a mano.
@@ -110,11 +113,19 @@ export default function Act2About() {
           ))}
           <Reveal variant="slide-right" className="aspect-square">
             <div className="relative h-full w-full overflow-hidden rounded-2xl bg-brown-dark">
-              <div className="grid h-full grid-cols-2 gap-3 p-6">
+              <Image
+                src={platformsBg}
+                alt="Luces cálidas desenfocadas de fondo"
+                fill
+                sizes="(min-width: 768px) 30vw, 45vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-brown-dark/55" />
+              <div className="relative grid h-full grid-cols-2 gap-3 p-6">
                 {platformIcons.map(({ name, Icon }) => (
                   <span
                     key={name}
-                    className="flex items-center justify-center rounded-xl bg-cream/10"
+                    className="flex items-center justify-center rounded-xl bg-cream/10 backdrop-blur-sm"
                   >
                     <Icon className="h-6 w-6 text-cream sm:h-7 sm:w-7" aria-hidden />
                   </span>
