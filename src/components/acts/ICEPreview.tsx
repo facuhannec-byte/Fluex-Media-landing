@@ -49,11 +49,11 @@ export default function ICEPreview() {
             Nuestro método
           </span>
           <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
-            Todo lo que hacemos con cada cliente pasa por{" "}
-            <span className="text-accent">tres fases</span>, en este orden.
+            Así pensamos el <span className="text-accent">crecimiento</span>{" "}
+            de cada cliente.
           </h2>
           <p className="mt-3 text-sm text-brown-dark sm:text-base">
-            No es una fórmula: es una forma de pensar el crecimiento.
+            Tres fases, un mismo objetivo: resultados predecibles.
           </p>
         </Reveal>
 

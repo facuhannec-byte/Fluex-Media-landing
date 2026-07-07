@@ -81,10 +81,12 @@ export default function Act2About() {
           <p className="mt-8 max-w-md text-sm text-brown-dark sm:text-base">
             Somos FLUEX Media, una agencia de crecimiento estratégico.
             Ayudamos a negocios a conseguir más clientes de forma
-            predecible: diseñamos la estrategia, creamos las campañas y
-            las optimizamos de forma continua. Trabajamos con cualquier
-            empresa que tenga un producto o servicio probado — no un rubro
-            específico.
+            predecible mediante estrategia, media buying, growth
+            marketing, creatividad y análisis de datos — diseñamos la
+            campaña, la ejecutamos y la optimizamos de forma continua. No
+            trabajamos por rubro, trabajamos por potencial: cualquier
+            empresa con un producto o servicio ya probado que quiera
+            construir un sistema predecible de adquisición de clientes.
           </p>
         </Reveal>
         <div className="grid grid-cols-2 gap-4">
