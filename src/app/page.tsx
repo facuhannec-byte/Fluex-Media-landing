@@ -2,8 +2,9 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HookDoors from "@/components/hero/HookDoors";
 import WelcomeTagline from "@/components/acts/WelcomeTagline";
+import AttentionSection from "@/components/acts/AttentionSection";
+import ProblemSection from "@/components/acts/ProblemSection";
 import Act2About from "@/components/acts/Act2About";
-import Act3Bridge from "@/components/acts/Act3Bridge";
 import SectionOpenSeam from "@/components/acts/SectionOpenSeam";
 import ICEPreview from "@/components/acts/ICEPreview";
 import Act4Plans from "@/components/acts/Act4Plans";
@@ -15,8 +16,9 @@ export default function Home() {
       <HookDoors />
       <WelcomeTagline />
       <Nav />
+      <AttentionSection />
+      <ProblemSection />
       <Act2About />
-      <Act3Bridge />
       <SectionOpenSeam />
       <ICEPreview />
       <Act4Plans />

@@ -105,18 +105,12 @@ export default function Act4Plans() {
               className="h-full"
             >
               <div
-                className={`relative flex h-full flex-col rounded-3xl border p-8 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-10 ${
+                className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-10 ${
                   item.featured
-                    ? "border-accent/40 bg-accent/[0.06] shadow-lg"
+                    ? "border-accent/50 bg-accent/[0.07] shadow-xl shadow-accent/10 ring-1 ring-accent/20 hover:shadow-2xl hover:ring-accent/40"
                     : "border-brown-dark/10 bg-cream"
                 }`}
               >
-                {item.featured && (
-                  <span className="absolute -top-3 left-8 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-cream">
-                    Recomendado
-                  </span>
-                )}
-
                 <h3 className="text-sm font-medium text-brown-dark">
                   {item.name}
                 </h3>

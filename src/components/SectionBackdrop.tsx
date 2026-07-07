@@ -131,23 +131,31 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
     placements: [
       place("chart", "tl", "lg", "animate-drift-a"),
       place("instagram", "br", "md", "animate-drift-b"),
-      place("target", "tr", "sm", "animate-spin-slow"),
+      place("meta", "tr", "sm", "animate-spin-slow"),
     ],
   },
-  bridge: {
+  attention: {
     tone: "text-cream",
     placements: [
-      place("message", "tl", "lg", "animate-drift-b"),
-      place("dollar", "br", "md", "animate-drift-a"),
+      place("bell", "tl", "lg", "animate-drift-b"),
+      place("spark", "br", "md", "animate-drift-a"),
       place("chart", "tr", "sm", "animate-drift-b"),
+    ],
+  },
+  problem: {
+    tone: "text-cream",
+    placements: [
+      place("triangle", "tl", "lg", "animate-drift-a"),
+      place("bars", "br", "md", "animate-drift-b"),
+      place("circle", "tr", "sm", "animate-spin-slow"),
     ],
   },
   plans: {
     tone: "text-brown-dark",
     placements: [
-      place("target", "tr", "lg", "animate-drift-a"),
+      place("dollar", "tr", "lg", "animate-drift-a"),
       place("tiktok", "bl", "md", "animate-drift-b"),
-      place("meta", "br", "sm", "animate-spin-slow"),
+      place("facebook", "br", "sm", "animate-spin-slow"),
     ],
   },
   cta: {
@@ -155,7 +163,7 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
     placements: [
       place("megaphone", "br", "lg", "animate-drift-a"),
       place("spark", "tl", "md", "animate-spin-slow"),
-      place("facebook", "bl", "sm", "animate-drift-b"),
+      place("instagram", "bl", "sm", "animate-drift-b"),
     ],
   },
   page: {
@@ -171,7 +179,7 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
     placements: [
       place("target", "tl", "lg", "animate-drift-a"),
       place("spark", "br", "md", "animate-spin-slow"),
-      place("bars", "tr", "sm", "animate-drift-b"),
+      place("google", "tr", "sm", "animate-drift-b"),
     ],
   },
 };

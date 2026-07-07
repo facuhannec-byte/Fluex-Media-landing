@@ -49,11 +49,15 @@ export default function ICEPreview() {
             Nuestro método
           </span>
           <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
-            Así pensamos el <span className="text-accent">crecimiento</span>{" "}
-            de cada cliente.
+            ¿Y cómo hacemos todo esto? No existe un mismo plan que sirva
+            para todas las empresas — cada una es distinta. Pero sí existe
+            un método definitivo para hacer crecer cada una:{" "}
+            <span className="text-accent">el nuestro.</span>
           </h2>
           <p className="mt-3 text-sm text-brown-dark sm:text-base">
-            Tres fases, un mismo objetivo: resultados predecibles.
+            El Método ICE es nuestra forma de hacerlo efectivo: los mismos
+            pasos que aplicamos con cada empresa para que crezca —
+            Inmersión, Construcción, Evolución.
           </p>
         </Reveal>
 

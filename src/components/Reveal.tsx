@@ -28,11 +28,13 @@ export default function Reveal({
   children,
   variant = "fade",
   delay = 0,
+  duration = 0.7,
   className,
 }: {
   children: ReactNode;
   variant?: Variant;
   delay?: number;
+  duration?: number;
   className?: string;
 }) {
   return (
@@ -41,7 +43,7 @@ export default function Reveal({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
       variants={variants[variant]}
     >
       {children}

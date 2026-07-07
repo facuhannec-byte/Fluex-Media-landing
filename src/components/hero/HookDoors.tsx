@@ -45,6 +45,16 @@ export default function HookDoors() {
       // resolución de sobra para que el dibujo se vea gradual.
       gsap.set(sketchPathRef.current, { strokeDashoffset: 1000 });
       gsap.set(iconImageRef.current, { opacity: 0 });
+      // Las puertas giran como si tuvieran una bisagra en el borde exterior
+      // (perspectiva 3D), en vez de solo deslizar en línea recta.
+      gsap.set(leftPanelRef.current, {
+        transformPerspective: 1400,
+        transformOrigin: "left center",
+      });
+      gsap.set(rightPanelRef.current, {
+        transformPerspective: 1400,
+        transformOrigin: "right center",
+      });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -59,8 +69,16 @@ export default function HookDoors() {
         },
       });
 
-      tl.to(leftPanelRef.current, { xPercent: -100, ease: "none", duration: 1 }, 0)
-        .to(rightPanelRef.current, { xPercent: 100, ease: "none", duration: 1 }, 0)
+      tl.to(
+          leftPanelRef.current,
+          { xPercent: -100, rotateY: -28, ease: "none", duration: 1 },
+          0,
+        )
+        .to(
+          rightPanelRef.current,
+          { xPercent: 100, rotateY: 28, ease: "none", duration: 1 },
+          0,
+        )
         .to(hintRef.current, { opacity: 0, duration: 0.08 }, 0)
         .fromTo(
           sketchPathRef.current,
