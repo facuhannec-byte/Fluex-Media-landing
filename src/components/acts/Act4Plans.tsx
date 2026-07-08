@@ -107,7 +107,7 @@ export default function Act4Plans() {
               <div
                 className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-10 ${
                   item.featured
-                    ? "border-accent/50 bg-accent/[0.07] shadow-xl shadow-accent/10 ring-1 ring-accent/20 hover:shadow-2xl hover:ring-accent/40"
+                    ? "border-accent/50 bg-accent/[0.07] shadow-xl shadow-accent/10 ring-1 ring-accent/20 hover:bg-accent/[0.1] hover:shadow-2xl hover:shadow-accent/25 hover:ring-accent/50"
                     : "border-brown-dark/10 bg-cream"
                 }`}
               >
@@ -171,23 +171,9 @@ export default function Act4Plans() {
         <Reveal variant="rise" delay={0.3} className="mt-10 flex justify-center">
           <Link
             href="/contacto"
-            className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-ink shadow-lg shadow-accent/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft hover:shadow-xl"
+            className="group inline-flex items-center gap-2 rounded-full border border-brown-dark/20 px-6 py-3 text-sm font-medium text-brown-dark transition-colors hover:border-accent/40 hover:text-accent"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 shrink-0"
-              aria-hidden
-            >
-              <rect x="3" y="5" width="18" height="16" rx="3" />
-              <path d="M3 10h18M8 3v4M16 3v4" />
-              <path d="m9 15 2 2 4-4" />
-            </svg>
-            Reservá tu Auditoría Estratégica gratuita
+            ¿Te interesa? Contactanos
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>

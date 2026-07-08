@@ -8,7 +8,7 @@ const phases = [
     title: "Inmersión",
     tagline: "Entender el negocio como si fuéramos parte de él.",
     description:
-      "Antes de proponer cualquier solución, investigamos en profundidad: qué vende el cliente y por qué la gente lo compra, quién es su cliente ideal, qué hace la competencia y qué lenguaje usa la audiencia.",
+      "Investigamos tu negocio, tu cliente ideal y tu competencia antes de proponer nada.",
     icon: (
       <>
         <circle cx="10" cy="10" r="6" />
@@ -21,7 +21,7 @@ const phases = [
     title: "Construcción",
     tagline: "Construir estrategias específicas para cada empresa.",
     description:
-      "Con la inmersión completa, construimos la estrategia de crecimiento, el framework de mensajes, las creatividades y la estructura de campañas. No existe una estrategia universal.",
+      "Construimos la estrategia, los mensajes y las campañas a medida — nada de fórmulas genéricas.",
     icon: (
       <>
         <rect x="4" y="10" width="6" height="10" />
@@ -34,7 +34,7 @@ const phases = [
     title: "Evolución",
     tagline: "Medición y optimización continua basada en datos reales.",
     description:
-      "Medimos performance semanalmente, optimizamos con evidencia, escalamos lo que funciona y pausamos lo que no.",
+      "Medimos, optimizamos y escalamos lo que funciona, semana a semana.",
     icon: <path d="M3 17 9 11l4 4 8-8M15 7h6v6" />,
   },
 ];
@@ -49,15 +49,12 @@ export default function ICEPreview() {
             Nuestro método
           </span>
           <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
-            ¿Y cómo hacemos todo esto? No existe un mismo plan que sirva
-            para todas las empresas — cada una es distinta. Pero sí existe
-            un método definitivo para hacer crecer cada una:{" "}
-            <span className="text-accent">el nuestro.</span>
+            No hay un plan que sirva para todas las empresas.
           </h2>
           <p className="mt-3 text-sm text-brown-dark sm:text-base">
-            El Método ICE es nuestra forma de hacerlo efectivo: los mismos
-            pasos que aplicamos con cada empresa para que crezca —
-            Inmersión, Construcción, Evolución.
+            Cada una conlleva un plan distinto. Lo que sí creamos es el
+            método definitivo para hacer crecer cada una:{" "}
+            <span className="font-semibold text-accent">el Método ICE.</span>
           </p>
         </Reveal>
 

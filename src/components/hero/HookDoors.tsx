@@ -86,11 +86,11 @@ export default function HookDoors() {
           { strokeDashoffset: 0, duration: 0.32, ease: "none" },
           0.08,
         )
-        .to(sketchGroupRef.current, { opacity: 0, duration: 0.14 }, 0.4)
+        .to(sketchGroupRef.current, { opacity: 0, duration: 0.22 }, 0.4)
         .fromTo(
           iconImageRef.current,
           { opacity: 0 },
-          { opacity: 1, duration: 0.14 },
+          { opacity: 1, duration: 0.22 },
           0.4,
         );
 
@@ -138,10 +138,12 @@ export default function HookDoors() {
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-6 text-center text-cream">
           <SectionBackdrop variant="cta" />
           <div className="relative h-10 w-16 sm:h-12 sm:w-20">
+            {/* Color muestreado directo del PNG real (más saturado que
+                --color-accent) para que el crossfade no tenga salto de tono. */}
             <svg
               ref={sketchGroupRef}
               viewBox={SKETCH_VIEWBOX}
-              className="absolute inset-0 h-full w-full text-accent-soft"
+              className="absolute inset-0 h-full w-full text-[#fc6319]"
               fill="none"
               stroke="currentColor"
               strokeWidth={7}

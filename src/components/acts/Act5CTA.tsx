@@ -12,12 +12,13 @@ export default function Act5CTA() {
       >
         <p className="font-display text-3xl font-medium leading-snug sm:text-5xl md:text-6xl">
           Todo comienza con una conversación.
+          <br />
+          Empecemos la nuestra.
         </p>
         <p className="text-base text-cream/80 sm:text-lg">
-          Empecemos. Reservá tu primera auditoría estratégica — gratuita y
-          sin compromiso. Analizamos tu negocio, te mostramos dónde puede
-          mejorar, y te contamos, en concreto, la visión que tenemos para
-          hacerlo crecer.
+          Reservá tu primera auditoría estratégica — gratuita y sin
+          compromiso. Analizamos tu negocio y te contamos la visión que
+          tenemos para hacerlo crecer.
         </p>
         <div className="mt-4 flex flex-col items-center gap-4 sm:flex-row">
           <Link

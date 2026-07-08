@@ -29,7 +29,7 @@ const steps = [
     ),
   },
   {
-    label: "Gestionamos tus campañas y perfiles",
+    label: "Gestionamos tus campañas donde vive la atención: Meta",
     icon: (
       <>
         <path d="M3 9v6h3l5 4V5L6 9H3Z" />
@@ -76,24 +76,23 @@ export default function Act2About() {
 
           <Reveal variant="slide-left" delay={0.08} duration={0.55}>
             <p className="mt-5 text-sm leading-relaxed text-brown-dark sm:text-base">
-              Somos una agencia obsesionada con el crecimiento y con los
-              movimientos del mercado. Analizamos hacia dónde va la
-              atención, qué cambia, qué funciona y qué dejó de funcionar.
-              Creemos que hoy el problema de la mayoría de los negocios no
-              está en su producto — está en cómo competir por la atención
-              en un mercado que cambia todo el tiempo.{" "}
-              <span className="text-accent">Nosotros vivimos ahí adentro.</span>
+              Somos una agencia obsesionada con el crecimiento. Analizamos
+              hacia dónde va la atención: qué cambia, qué funciona, qué
+              dejó de funcionar.{" "}
+              <span className="text-accent">Vivimos ahí adentro.</span>
             </p>
           </Reveal>
 
           <Reveal variant="slide-left" delay={0.14} duration={0.55}>
-            <p className="mt-4 text-sm leading-relaxed text-brown-dark sm:text-base">
-              La nueva sabiduría de los negocios ya no es hacer todo uno
-              mismo — es saber en manos de quién poner cada parte. Delegar
-              esto en quien vive obsesionado con este mundo te devuelve lo
-              que más vale y menos se recupera:{" "}
-              <span className="text-accent">horas y foco</span>, para lo
-              que solo vos podés hacer.
+            <p className="mt-6 font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+              La delegación es la{" "}
+              <span className="text-accent">nueva sabiduría</span> de las
+              empresas.
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-brown-dark sm:text-base">
+              Delegar esto en quien vive obsesionado con este mundo te
+              devuelve lo que más vale y menos se recupera:{" "}
+              <span className="text-accent">horas y foco.</span>
             </p>
           </Reveal>
 
@@ -127,11 +126,22 @@ export default function Act2About() {
             </ul>
           </Reveal>
 
+          <Reveal variant="fade" delay={0.24} className="my-10 flex justify-center">
+            <Image
+              src="/fluex-logo-icon.png"
+              alt=""
+              width={477}
+              height={307}
+              className="h-10 w-auto opacity-15"
+              aria-hidden
+            />
+          </Reveal>
+
           <Reveal
             variant="fade"
             delay={0.28}
             duration={0.6}
-            className="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.06] p-6 sm:p-8"
+            className="rounded-2xl border border-accent/20 bg-accent/[0.06] p-6 sm:p-8"
           >
             <p className="font-display text-lg font-medium leading-snug text-ink sm:text-xl">
               No generamos solo más clientes para tu empresa.
