@@ -11,8 +11,7 @@ import SectionBackdrop from "@/components/SectionBackdrop";
 const SKETCH_VIEWBOX = "0 0 100 60";
 const SKETCH_PATH = "M4 54 L38 24 L58 40 L96 6";
 
-const FLUEX = "Fluex".split("");
-const MEDIA = "Media".split("");
+const FLUEX = "FLUEX".split("");
 const LABEL = "Bienvenido".split("");
 const LABEL_A = "a".split("");
 
@@ -28,7 +27,9 @@ export default function HookDoors() {
   const labelLetterRefs = useRef<Array<HTMLSpanElement | null>>(
     Array(LABEL.length + LABEL_A.length).fill(null),
   );
-  const letterRefs = useRef<Array<HTMLSpanElement | null>>(Array(10).fill(null));
+  const letterRefs = useRef<Array<HTMLSpanElement | null>>(
+    Array(FLUEX.length).fill(null),
+  );
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -63,7 +64,7 @@ export default function HookDoors() {
           end: "bottom bottom",
           // Un scrub más alto = más "colchón": aunque el gesto de scroll sea
           // muy rápido, la animación tarda al menos este tiempo en alcanzar
-          // el progreso real, dando más margen para leer "Fluex Media".
+          // el progreso real, dando más margen para leer "FLUEX".
           scrub: 0.9,
           pin: sceneRef.current,
         },
@@ -138,12 +139,10 @@ export default function HookDoors() {
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-6 text-center text-cream">
           <SectionBackdrop variant="cta" />
           <div className="relative h-10 w-16 sm:h-12 sm:w-20">
-            {/* Color muestreado directo del PNG real (más saturado que
-                --color-accent) para que el crossfade no tenga salto de tono. */}
             <svg
               ref={sketchGroupRef}
               viewBox={SKETCH_VIEWBOX}
-              className="absolute inset-0 h-full w-full text-[#fc6319]"
+              className="absolute inset-0 h-full w-full text-accent"
               fill="none"
               stroke="currentColor"
               strokeWidth={7}
@@ -200,33 +199,18 @@ export default function HookDoors() {
               ))}
             </span>
           </span>
-          <h1 className="flex items-baseline gap-3 font-display text-5xl font-semibold tracking-tight sm:text-7xl md:text-8xl">
-            <span className="flex">
-              {FLUEX.map((char, i) => (
-                <span
-                  key={`fluex-${i}`}
-                  ref={(el) => {
-                    letterRefs.current[i] = el;
-                  }}
-                  className={`inline-block ${i === 4 ? "text-accent" : ""}`}
-                >
-                  {char}
-                </span>
-              ))}
-            </span>
-            <span className="flex">
-              {MEDIA.map((char, i) => (
-                <span
-                  key={`media-${i}`}
-                  ref={(el) => {
-                    letterRefs.current[5 + i] = el;
-                  }}
-                  className="inline-block"
-                >
-                  {char}
-                </span>
-              ))}
-            </span>
+          <h1 className="flex items-baseline font-display text-5xl font-semibold tracking-tight sm:text-7xl md:text-8xl">
+            {FLUEX.map((char, i) => (
+              <span
+                key={`fluex-${i}`}
+                ref={(el) => {
+                  letterRefs.current[i] = el;
+                }}
+                className={`inline-block ${i === 4 ? "text-accent" : ""}`}
+              >
+                {char}
+              </span>
+            ))}
           </h1>
         </div>
 

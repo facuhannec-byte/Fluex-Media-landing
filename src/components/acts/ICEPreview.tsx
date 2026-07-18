@@ -6,9 +6,9 @@ const phases = [
   {
     letter: "I",
     title: "Inmersión",
-    tagline: "Entender el negocio como si fuéramos parte de él.",
+    tagline: "Entramos al negocio antes de entrar a las herramientas.",
     description:
-      "Investigamos tu negocio, tu cliente ideal y tu competencia antes de proponer nada.",
+      "Investigamos, observamos y escuchamos cómo funciona realmente tu negocio: operación, clientes, equipo, propuesta y mercado.",
     icon: (
       <>
         <circle cx="10" cy="10" r="6" />
@@ -19,9 +19,9 @@ const phases = [
   {
     letter: "C",
     title: "Construcción",
-    tagline: "Construir estrategias específicas para cada empresa.",
+    tagline: "No hacemos acciones aisladas. Construimos una dirección.",
     description:
-      "Construimos la estrategia, los mensajes y las campañas a medida — nada de fórmulas genéricas.",
+      "Convertimos el diagnóstico en prioridades: qué resolver primero, qué puede esperar y qué herramientas hacen falta.",
     icon: (
       <>
         <rect x="4" y="10" width="6" height="10" />
@@ -32,16 +32,19 @@ const phases = [
   {
     letter: "E",
     title: "Evolución",
-    tagline: "Medición y optimización continua basada en datos reales.",
+    tagline: "Crecer no es un evento. Es un proceso continuo.",
     description:
-      "Medimos, optimizamos y escalamos lo que funciona, semana a semana.",
+      "Medimos qué cambió, qué funcionó, y cuál es el próximo cuello de botella por resolver.",
     icon: <path d="M3 17 9 11l4 4 8-8M15 7h6v6" />,
   },
 ];
 
 export default function ICEPreview() {
   return (
-    <section className="relative overflow-hidden bg-cream px-6 py-24 sm:px-10">
+    <section
+      id="metodo-ice"
+      className="relative overflow-hidden bg-cream px-6 py-24 sm:px-10"
+    >
       <SectionBackdrop variant="ice" />
       <div className="relative z-10 mx-auto max-w-5xl">
         <Reveal variant="fade" className="mx-auto max-w-2xl text-center">

@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fluex Media — Crecimiento y captación de atención",
+  title: "FLUEX | Socios estratégicos de crecimiento",
   description:
-    "Fluex Media es la agencia que ayuda a empresas de cualquier rubro a crecer y captar la atención del mercado.",
+    "Detectamos qué está frenando el crecimiento de tu negocio y construimos un sistema adaptado para resolverlo.",
 };
 
 export default function RootLayout({

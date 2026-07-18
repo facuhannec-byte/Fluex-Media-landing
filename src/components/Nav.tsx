@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { href: "/#planes", label: "Planes" },
+  { href: "/#acompanamiento", label: "Cómo trabajamos" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/metodologia", label: "Metodología" },
+  { href: "/metodologia", label: "Método ICE" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -32,7 +32,7 @@ export default function Nav() {
             aria-hidden
           />
           <span className="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">
-            Flue<span className="text-accent">x</span> Media
+            FLUE<span className="text-accent">X</span>
           </span>
         </Link>
 

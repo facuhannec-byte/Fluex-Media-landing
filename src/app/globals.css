@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #f5ede0;
+  --color-cream: #f7eee4;
   --color-cream-soft: #efe3d0;
-  --color-ink: #2b1d14;
-  --color-accent: #d96f32;
-  --color-accent-soft: #e8955f;
+  --color-ink: #2a2a2a;
+  --color-accent: #fc6319;
+  --color-accent-soft: #f28a54;
   --color-brown-dark: #6b4226;
   --color-brown: #8c5a3c;
 }

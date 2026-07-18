@@ -129,33 +129,41 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
   about: {
     tone: "text-brown-dark",
     placements: [
-      place("chart", "tl", "lg", "animate-drift-a"),
-      place("instagram", "br", "md", "animate-drift-b"),
-      place("meta", "tr", "sm", "animate-spin-slow"),
-    ],
-  },
-  attention: {
-    tone: "text-cream",
-    placements: [
-      place("bell", "tl", "lg", "animate-drift-b"),
-      place("spark", "br", "md", "animate-drift-a"),
-      place("chart", "tr", "sm", "animate-drift-b"),
-    ],
-  },
-  problem: {
-    tone: "text-cream",
-    placements: [
-      place("triangle", "tl", "lg", "animate-drift-a"),
-      place("bars", "br", "md", "animate-drift-b"),
+      place("message", "tl", "lg", "animate-drift-a"),
+      place("bell", "br", "md", "animate-drift-b"),
       place("circle", "tr", "sm", "animate-spin-slow"),
     ],
   },
-  plans: {
+  paradigm: {
+    tone: "text-cream",
+    placements: [
+      place("target", "tl", "lg", "animate-drift-b"),
+      place("circle", "br", "md", "animate-drift-a"),
+      place("spark", "tr", "sm", "animate-drift-b"),
+    ],
+  },
+  whatwedo: {
+    tone: "text-cream",
+    placements: [
+      place("bars", "tl", "lg", "animate-drift-a"),
+      place("chart", "br", "md", "animate-drift-b"),
+      place("triangle", "tr", "sm", "animate-spin-slow"),
+    ],
+  },
+  accompaniment: {
     tone: "text-brown-dark",
     placements: [
       place("dollar", "tr", "lg", "animate-drift-a"),
       place("tiktok", "bl", "md", "animate-drift-b"),
       place("facebook", "br", "sm", "animate-spin-slow"),
+    ],
+  },
+  differentiator: {
+    tone: "text-brown-dark",
+    placements: [
+      place("bars", "tl", "lg", "animate-drift-a"),
+      place("bell", "br", "md", "animate-drift-b"),
+      place("triangle", "tr", "sm", "animate-spin-slow"),
     ],
   },
   cta: {

@@ -5,31 +5,32 @@ import Reveal from "@/components/Reveal";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
-  title: "Metodología — Fluex Media",
-  description: "El método ICE: cómo trabajamos en Fluex Media, en tres fases.",
+  title: "Metodología — FLUEX",
+  description:
+    "El Método ICE: cómo diagnosticamos, priorizamos y construimos un sistema de crecimiento para cada negocio.",
 };
 
 const phases = [
   {
     letter: "I",
     title: "Inmersión",
-    tagline: "Entender el negocio como si fuéramos parte de él.",
+    tagline: "Entramos al negocio antes de entrar a las herramientas.",
     description:
-      "Antes de proponer cualquier solución, investigamos en profundidad: qué vende el cliente y por qué la gente lo compra, quién es su cliente ideal, qué hace la competencia y qué lenguaje usa la audiencia.",
+      "Antes de proponer nada, nos sumergimos en el negocio: investigamos, observamos, escuchamos y entendemos cómo funciona realmente la empresa — su operación, clientes, equipo, propuesta, mercado, comunicación y objetivos.",
   },
   {
     letter: "C",
     title: "Construcción",
-    tagline: "Construir estrategias específicas para cada empresa.",
+    tagline: "No hacemos acciones aisladas. Construimos una dirección.",
     description:
-      "Con la inmersión completa, construimos la estrategia de crecimiento, el framework de mensajes, las creatividades y la estructura de campañas. No existe una estrategia universal.",
+      "Convertimos el diagnóstico en prioridades y las prioridades en un sistema. Definimos qué debe resolverse primero, qué puede esperar, qué herramientas hacen falta y cómo deben trabajar juntas.",
   },
   {
     letter: "E",
     title: "Evolución",
-    tagline: "Medición y optimización continua basada en datos reales.",
+    tagline: "Crecer no es un evento. Es un proceso continuo.",
     description:
-      "Medimos performance semanalmente, optimizamos con evidencia, escalamos lo que funciona y pausamos lo que no.",
+      "Medimos qué cambió, qué funcionó y cuál es el próximo cuello de botella. El negocio evoluciona y el sistema también.",
   },
 ];
 
@@ -49,9 +50,9 @@ export default function MetodologiaPage() {
                 Un proceso claro, <span className="text-accent">sin vueltas</span>.
               </h1>
               <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
-                No improvisamos. Todo lo que hacemos con cada cliente pasa
-                por tres fases, en este orden. No es una fórmula: es una
-                forma de pensar el crecimiento.
+                No partimos de una herramienta. Todo lo que hacemos con
+                cada negocio pasa por tres fases, en este orden. No es una
+                fórmula: es una forma de pensar el crecimiento.
               </p>
             </Reveal>
           </div>

@@ -7,35 +7,35 @@ import Reveal from "@/components/Reveal";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
-  title: "Nosotros — Fluex Media",
+  title: "Nosotros — FLUEX",
   description:
-    "Conocé la historia, el equipo y los valores detrás de Fluex Media.",
+    "Socios estratégicos de crecimiento: quiénes somos, cómo pensamos y de dónde viene el nombre FLUEX.",
 };
 
 const comparison = [
   {
-    them: "Ejecutan sin entender el negocio",
-    us: "Nos involucramos antes de hacer un solo anuncio",
+    them: "Vende un servicio antes de escuchar",
+    us: "Diagnostica antes de proponer",
   },
   {
-    them: "Mensajes genéricos",
-    us: "Copy basado en el lenguaje real de la audiencia",
+    them: "Aplica el mismo paquete a todos",
+    us: "Construye un sistema a medida",
   },
   {
-    them: "Métricas de vanidad",
-    us: "Reportes orientados a decisiones de negocio",
+    them: "Mide solo métricas de marketing",
+    us: "Mide el impacto real en el negocio",
   },
   {
-    them: "Solo negocios digitales",
-    us: "Cualquier negocio que quiera crecer",
+    them: "Asume que la publicidad es la solución",
+    us: "Prioriza según el verdadero cuello de botella",
   },
   {
-    them: "IA como buzzword",
-    us: "IA integrada en cada paso del proceso",
+    them: "Es un proveedor más",
+    us: "Es un socio estratégico",
   },
   {
-    them: "Proceso opaco",
-    us: "Sistema documentado y transferible",
+    them: "Ejecuta tareas sueltas",
+    us: "Construye una dirección",
   },
 ];
 
@@ -43,17 +43,17 @@ const ice = [
   {
     letter: "I",
     title: "Inmersión",
-    description: "Entendemos el negocio como si fuéramos parte de él.",
+    description: "Entramos al negocio antes de entrar a las herramientas.",
   },
   {
     letter: "C",
     title: "Construcción",
-    description: "Armamos la estrategia específica para tu empresa.",
+    description: "No hacemos acciones aisladas. Construimos una dirección.",
   },
   {
     letter: "E",
     title: "Evolución",
-    description: "Medimos, optimizamos y escalamos lo que funciona.",
+    description: "Crecer no es un evento. Es un proceso continuo.",
   },
 ];
 
@@ -87,15 +87,15 @@ export default function NosotrosPage() {
                 Nosotros
               </span>
               <h1 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
-                Una agencia hecha por gente obsesionada con el{" "}
-                <span className="text-accent">crecimiento</span>.
+                Entendemos negocios,{" "}
+                <span className="text-accent">no solo marketing</span>.
               </h1>
               <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
-                Fluex Media nació de una idea simple: la mayoría de las
-                empresas no tienen un problema de producto, tienen un
-                problema de atención. Nadie las ve. Nos dedicamos a cambiar
-                eso, combinando estrategia, contenido y captación para
-                marcas de cualquier rubro.
+                FLUEX nació de una idea simple: la mayoría de los negocios
+                no tienen un problema de producto — tienen un problema de
+                foco. No siempre saben qué les está frenando el
+                crecimiento. Nos dedicamos a encontrarlo, y a construir,
+                con cada empresa, el sistema que lo resuelva.
               </p>
             </Reveal>
           </div>
@@ -124,20 +124,21 @@ export default function NosotrosPage() {
               </span>
               <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
                 Las agencias tradicionales ejecutan.{" "}
-                <span className="text-accent">Nosotros entendemos</span> el
-                negocio primero.
+                <span className="text-accent">Nosotros diagnosticamos</span>{" "}
+                primero.
               </h2>
               <p className="mt-4 max-w-2xl text-sm text-brown-dark sm:text-base">
-                Reciben un brief, ejecutan una campaña y entregan un reporte.
-                Nosotros nos involucramos en el negocio para entenderlo desde
-                dentro: antes de diseñar un anuncio, entendemos el producto,
-                el cliente ideal, la competencia y el momento del mercado.
+                Reciben un pedido, lo ejecutan y entregan un reporte.
+                Nosotros nos involucramos en el negocio para entenderlo
+                desde adentro: antes de proponer nada, entendemos la
+                operación, el cliente ideal, la competencia y el momento
+                del mercado.
               </p>
             </Reveal>
             <div className="mt-10 overflow-hidden rounded-2xl border border-brown-dark/10">
               <div className="grid grid-cols-2 bg-cream-soft text-xs font-medium uppercase tracking-[0.2em] text-brown-dark">
                 <div className="px-5 py-3">Agencia tradicional</div>
-                <div className="px-5 py-3 text-accent">Fluex Media</div>
+                <div className="px-5 py-3 text-accent">FLUEX</div>
               </div>
               {comparison.map((row, index) => (
                 <Reveal
@@ -167,8 +168,8 @@ export default function NosotrosPage() {
               Método <span className="text-accent">ICE</span>
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-brown-dark sm:text-base">
-              Tres fases, en este orden, con cada cliente. No es una fórmula:
-              es una forma de pensar el crecimiento —{" "}
+              Tres fases, en este orden, con cada negocio. No es una
+              fórmula: es una forma de pensar el crecimiento —{" "}
               <Link href="/metodologia" className="text-accent underline underline-offset-2">
                 ver el proceso completo
               </Link>
@@ -192,6 +193,31 @@ export default function NosotrosPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-brown-dark px-6 py-24 text-cream sm:px-10">
+          <SectionBackdrop variant="paradigm" />
+          <div className="relative z-10 mx-auto max-w-3xl text-center">
+            <Reveal variant="fade">
+              <span className="text-xs uppercase tracking-[0.3em] text-accent-soft">
+                De dónde viene el nombre
+              </span>
+              <h2 className="mt-4 font-display text-2xl font-medium leading-snug sm:text-3xl">
+                FLUEX nace de <span className="text-accent">“Flow”</span>.
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-cream/80 sm:text-base">
+                Creemos que el crecimiento de un negocio no debería
+                depender de la suerte, del algoritmo o de una acción
+                aislada. Cuando una empresa tiene claridad, dirección y un
+                sistema bien construido, el crecimiento empieza a fluir.
+              </p>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-cream/80 sm:text-base">
+                La <span className="text-accent">X</span> representa el
+                punto donde la estrategia se convierte en acción — y ese
+                flujo empieza a multiplicar resultados.
+              </p>
+            </Reveal>
           </div>
         </section>
 

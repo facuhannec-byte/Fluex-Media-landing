@@ -5,8 +5,9 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contacto — Fluex Media",
-  description: "Contactate con Fluex Media y contanos qué necesita tu marca.",
+  title: "Contacto — FLUEX",
+  description:
+    "Hablemos de tu negocio: contanos qué está pasando y detectemos juntos dónde está la oportunidad.",
 };
 
 export default function ContactoPage() {
@@ -21,11 +22,12 @@ export default function ContactoPage() {
                 Contacto
               </span>
               <h1 className="mt-4 font-display text-3xl font-medium leading-snug text-ink sm:text-4xl">
-                Contanos qué necesita tu <span className="text-accent">marca</span>.
+                Hablemos de tu <span className="text-accent">negocio</span>.
               </h1>
               <p className="mt-6 max-w-md text-sm text-brown-dark sm:text-base">
                 Completá el formulario y te respondemos en menos de 48 horas
-                para agendar una primera charla sin compromiso.
+                para agendar una primera conversación estratégica, sin
+                compromiso.
               </p>
               <div className="mt-10 space-y-3 text-sm text-brown-dark">
                 <a

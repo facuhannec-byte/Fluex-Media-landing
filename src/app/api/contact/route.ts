@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Fluex Media <onboarding@resend.dev>",
+      from: "FLUEX <onboarding@resend.dev>",
       to: CONTACT_EMAIL,
       replyTo: email,
       subject: `Nuevo contacto de ${nombre}${empresa ? ` (${empresa})` : ""}`,

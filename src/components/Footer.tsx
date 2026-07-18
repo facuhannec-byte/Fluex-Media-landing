@@ -19,11 +19,11 @@ export default function Footer() {
               aria-hidden
             />
             <span className="font-display text-xl font-semibold tracking-tight text-ink">
-              Flue<span className="text-accent">x</span> Media
+              FLUE<span className="text-accent">X</span>
             </span>
           </div>
           <p className="mt-3 text-sm text-brown-dark">
-            Crecimiento y captación de atención para tu marca.
+            Socios estratégicos de crecimiento.
           </p>
         </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-brown-dark">
