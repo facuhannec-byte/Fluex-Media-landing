@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
-  title: "Metodología — FLUEX",
+  title: "Metodología | FLUEX",
   description:
     "El Método ICE: cómo diagnosticamos, priorizamos y construimos un sistema de crecimiento para cada negocio.",
 };
@@ -16,7 +16,7 @@ const phases = [
     title: "Inmersión",
     tagline: "Entramos al negocio antes de entrar a las herramientas.",
     description:
-      "Antes de proponer nada, nos sumergimos en el negocio: investigamos, observamos, escuchamos y entendemos cómo funciona realmente la empresa — su operación, clientes, equipo, propuesta, mercado, comunicación y objetivos.",
+      "Antes de proponer nada, nos sumergimos en el negocio: investigamos, observamos, escuchamos y entendemos cómo funciona realmente la empresa, su operación, sus clientes, su equipo, su propuesta, su mercado y sus objetivos.",
   },
   {
     letter: "C",
@@ -50,9 +50,10 @@ export default function MetodologiaPage() {
                 Un proceso claro, <span className="text-accent">sin vueltas</span>.
               </h1>
               <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
-                No partimos de una herramienta. Todo lo que hacemos con
-                cada negocio pasa por tres fases, en este orden. No es una
-                fórmula: es una forma de pensar el crecimiento.
+                Cada negocio necesita un plan distinto. Lo que no cambia es
+                la forma de construirlo: tres fases, en este orden, con
+                cada negocio. No es una fórmula, es una forma de pensar el
+                crecimiento.
               </p>
             </Reveal>
           </div>

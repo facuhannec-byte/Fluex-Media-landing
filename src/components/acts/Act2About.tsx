@@ -34,32 +34,24 @@ export default function Act2About() {
             </h2>
           </Reveal>
 
-          <Reveal variant="slide-left" delay={0.08} duration={0.55}>
-            <p className="mt-5 text-sm leading-relaxed text-brown-dark sm:text-base">
-              Somos un socio estratégico de crecimiento. No partimos de una
-              herramienta ni asumimos que todos los negocios necesitan lo
-              mismo. Nos involucramos en tu negocio, lo entendemos en
-              profundidad y{" "}
-              <span className="text-accent">
-                construimos un sistema a su medida.
-              </span>
+          <Reveal
+            variant="slide-left"
+            delay={0.08}
+            duration={0.55}
+            className="mt-6 space-y-1.5"
+          >
+            <p className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+              Nos involucramos en tu negocio.
+            </p>
+            <p className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+              Lo entendemos en profundidad.
+            </p>
+            <p className="font-display text-xl font-medium leading-snug text-accent sm:text-2xl">
+              Y construimos, con vos, la dirección que necesita.
             </p>
           </Reveal>
 
-          <Reveal variant="slide-left" delay={0.14} duration={0.55}>
-            <p className="mt-6 font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
-              La claridad es la{" "}
-              <span className="text-accent">ventaja competitiva</span> que
-              más falta.
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-brown-dark sm:text-base">
-              Tener a alguien que entiende tu negocio integralmente — no
-              solo tus anuncios — te devuelve algo que no se recupera
-              fácil: <span className="text-accent">dirección y foco.</span>
-            </p>
-          </Reveal>
-
-          <Reveal variant="fade" delay={0.2} className="my-10 flex justify-center">
+          <Reveal variant="fade" delay={0.16} className="my-10 flex justify-center">
             <Image
               src="/fluex-logo-icon.png"
               alt=""
@@ -72,21 +64,22 @@ export default function Act2About() {
 
           <Reveal
             variant="fade"
-            delay={0.24}
+            delay={0.2}
             duration={0.6}
             className="rounded-2xl border border-accent/20 bg-accent/[0.06] p-6 sm:p-8"
           >
             <p className="font-display text-lg font-medium leading-snug text-ink sm:text-xl">
-              No llegamos a vender publicidad.
+              No venimos a venderte publicidad.
             </p>
             <p className="mt-2 text-sm leading-relaxed text-brown-dark sm:text-base">
-              Llegamos a entender tu negocio y construir, con vos, el
-              sistema que lo haga crecer.
+              Venimos a entender tu negocio y a construir con vos un
+              sistema para hacerlo crecer.
             </p>
-            <p className="mt-4 font-display text-lg italic leading-snug text-brown-dark sm:text-xl">
-              Buscamos que sientas esto: “Entendieron mi negocio mejor que
-              cualquier agencia con la que hablé.”
-            </p>
+            <ul className="mt-5 space-y-1.5 border-t border-accent/15 pt-4 text-sm font-medium text-brown-dark sm:text-base">
+              <li>Entender antes de proponer.</li>
+              <li>Priorizar antes de ejecutar.</li>
+              <li>Medir antes de repetir.</li>
+            </ul>
           </Reveal>
 
           <Reveal

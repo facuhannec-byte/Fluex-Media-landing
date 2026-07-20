@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
-  title: "Nosotros — FLUEX",
+  title: "Nosotros | FLUEX",
   description:
     "Socios estratégicos de crecimiento: quiénes somos, cómo pensamos y de dónde viene el nombre FLUEX.",
 };
@@ -92,7 +92,7 @@ export default function NosotrosPage() {
               </h1>
               <p className="mt-6 max-w-2xl text-sm text-brown-dark sm:text-base">
                 FLUEX nació de una idea simple: la mayoría de los negocios
-                no tienen un problema de producto — tienen un problema de
+                no tienen un problema de producto, tienen un problema de
                 foco. No siempre saben qué les está frenando el
                 crecimiento. Nos dedicamos a encontrarlo, y a construir,
                 con cada empresa, el sistema que lo resuelva.
@@ -169,9 +169,9 @@ export default function NosotrosPage() {
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-brown-dark sm:text-base">
               Tres fases, en este orden, con cada negocio. No es una
-              fórmula: es una forma de pensar el crecimiento —{" "}
+              fórmula, es una forma de pensar el crecimiento.{" "}
               <Link href="/metodologia" className="text-accent underline underline-offset-2">
-                ver el proceso completo
+                Ver el proceso completo
               </Link>
               .
             </p>
@@ -214,7 +214,7 @@ export default function NosotrosPage() {
               </p>
               <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-cream/80 sm:text-base">
                 La <span className="text-accent">X</span> representa el
-                punto donde la estrategia se convierte en acción — y ese
+                punto donde la estrategia se convierte en acción, y ese
                 flujo empieza a multiplicar resultados.
               </p>
             </Reveal>

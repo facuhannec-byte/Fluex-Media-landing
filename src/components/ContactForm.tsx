@@ -92,7 +92,7 @@ export default function ContactForm() {
 
       {status === "error" && (
         <p className="text-sm text-red-700">
-          No se pudo enviar el mensaje — escribinos directamente a{" "}
+          No se pudo enviar el mensaje. Escribinos directamente a{" "}
           <a
             href="https://instagram.com/fluex.media"
             target="_blank"

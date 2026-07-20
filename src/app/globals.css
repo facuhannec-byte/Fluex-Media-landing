@@ -3,22 +3,26 @@
 :root {
   --color-cream: #f7eee4;
   --color-cream-soft: #efe3d0;
-  --color-ink: #2a2a2a;
+  --color-white-warm: #fffdfc;
+  --color-ink: #241714;
   --color-accent: #fc6319;
   --color-accent-soft: #f28a54;
   --color-brown-dark: #6b4226;
   --color-brown: #8c5a3c;
+  --color-maroon: #4a211c;
 }
 
 @theme inline {
   --color-cream: var(--color-cream);
   --color-cream-soft: var(--color-cream-soft);
+  --color-white-warm: var(--color-white-warm);
   --color-ink: var(--color-ink);
   --color-accent: var(--color-accent);
   --color-accent-soft: var(--color-accent-soft);
   --color-brown-dark: var(--color-brown-dark);
   --color-brown: var(--color-brown);
-  --font-display: var(--font-fraunces);
+  --color-maroon: var(--color-maroon);
+  --font-display: var(--font-source-serif);
   --font-sans: var(--font-inter);
 }
 
@@ -90,5 +94,40 @@ body {
   .animate-spin-slow,
   .animate-bounce-y {
     animation: none !important;
+  }
+}
+
+/* Barrido de brillo sutil para botones primarios (fondo naranja sólido).
+   Una franja clara cruza el botón una vez, de punta a punta, en hover. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 253, 252, 0.4) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.45s ease;
+  pointer-events: none;
+}
+
+.btn-shine:hover::after,
+.btn-shine:focus-visible::after {
+  transform: translateX(130%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine::after {
+    transition: none;
+    display: none;
   }
 }

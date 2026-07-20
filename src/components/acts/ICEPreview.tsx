@@ -52,11 +52,10 @@ export default function ICEPreview() {
             Nuestro método
           </span>
           <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
-            No hay un plan que sirva para todas las empresas.
+            Cada negocio necesita un plan distinto.
           </h2>
           <p className="mt-3 text-sm text-brown-dark sm:text-base">
-            Cada una conlleva un plan distinto. Lo que sí creamos es el
-            método definitivo para hacer crecer cada una:{" "}
+            Lo que no cambia es la forma de construirlo:{" "}
             <span className="font-semibold text-accent">el Método ICE.</span>
           </p>
         </Reveal>

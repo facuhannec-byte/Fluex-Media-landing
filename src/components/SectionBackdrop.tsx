@@ -134,6 +134,14 @@ const variants: Record<string, { tone: string; placements: Placement[] }> = {
       place("circle", "tr", "sm", "animate-spin-slow"),
     ],
   },
+  hero: {
+    tone: "text-cream",
+    placements: [
+      place("message", "tl", "lg", "animate-drift-a"),
+      place("bars", "br", "md", "animate-drift-b"),
+      place("triangle", "tr", "sm", "animate-spin-slow"),
+    ],
+  },
   paradigm: {
     tone: "text-cream",
     placements: [

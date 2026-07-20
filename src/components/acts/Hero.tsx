@@ -1,15 +1,30 @@
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
+import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Hero() {
   return (
     // -mt-px: se solapa 1px con el wrapper pineado de HookDoors para que el
     // spacer que genera ScrollTrigger (a veces una fracción de píxel corto)
     // nunca deje ver el fondo cream del body entre las dos secciones oscuras.
-    <section className="relative -mt-px flex flex-col items-center justify-center gap-6 bg-ink px-6 py-28 text-center text-cream sm:py-36">
+    <section className="relative -mt-px flex flex-col items-center justify-center gap-6 overflow-hidden bg-ink px-6 py-28 text-center text-cream sm:py-36">
+      <SectionBackdrop variant="hero" />
+      <svg
+        viewBox="0 0 100 60"
+        className="pointer-events-none absolute -right-10 top-10 h-64 w-64 text-accent-soft opacity-[0.07] animate-drift-a sm:h-80 sm:w-80"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={4}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M4 54 L38 24 L58 40 L96 6" />
+      </svg>
+
       <Reveal variant="fade">
         <span className="text-xs uppercase tracking-[0.35em] text-accent-soft">
-          Socios estratégicos de crecimiento
+          Somos socios estratégicos de crecimiento
         </span>
       </Reveal>
 
@@ -32,20 +47,18 @@ export default function Hero() {
         variant="fade"
         delay={0.24}
         duration={0.5}
-        className="mt-4 flex flex-col items-center gap-4 sm:flex-row"
+        className="relative z-10 mt-4 flex flex-col items-center gap-4 sm:flex-row"
       >
-        <Link
-          href="/contacto"
-          className="rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-ink transition-colors hover:bg-accent-soft"
-        >
+        <Button href="/contacto" variant="primary">
           Hablemos de tu negocio
-        </Link>
-        <Link
+        </Button>
+        <Button
           href="#metodo-ice"
-          className="rounded-full border border-cream/30 px-8 py-4 text-sm font-medium uppercase tracking-[0.15em] text-cream/90 transition-colors hover:border-cream/60 hover:text-cream"
+          variant="secondary"
+          className="text-cream/90"
         >
           Conocé el método ICE
-        </Link>
+        </Button>
       </Reveal>
 
       <Reveal variant="fade" delay={0.32} duration={0.5}>

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export default function Act5CTA() {
@@ -21,12 +21,9 @@ export default function Act5CTA() {
           la mayor oportunidad de impacto.
         </p>
         <div className="mt-4">
-          <Link
-            href="/contacto"
-            className="rounded-full bg-accent px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-accent-soft"
-          >
+          <Button href="/contacto" variant="primary">
             Analicemos tu negocio
-          </Link>
+          </Button>
         </div>
         <p className="text-xs uppercase tracking-[0.15em] text-cream/50">
           Una conversación estratégica, sin fórmulas genéricas y sin

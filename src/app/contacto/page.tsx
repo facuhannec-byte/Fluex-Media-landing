@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contacto — FLUEX",
+  title: "Contacto | FLUEX",
   description:
     "Hablemos de tu negocio: contanos qué está pasando y detectemos juntos dónde está la oportunidad.",
 };

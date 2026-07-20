@@ -39,13 +39,13 @@ const points = [
 
 export default function ParadigmSection() {
   return (
-    <section className="relative overflow-hidden bg-brown-dark px-6 py-28 text-center text-cream sm:px-10">
+    <section className="relative overflow-hidden bg-maroon px-6 py-28 text-center text-cream sm:px-10">
       <SectionBackdrop variant="paradigm" />
       <NodesBackdrop />
       <div className="relative z-10 mx-auto max-w-3xl">
         <Reveal variant="rise">
           <span className="text-xs uppercase tracking-[0.3em] text-accent-soft">
-            El cambio de mirada
+            Un cambio de mirada
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium uppercase leading-snug sm:text-4xl md:text-5xl">
             Tu negocio no necesita hacer más.
@@ -67,10 +67,10 @@ export default function ParadigmSection() {
           ))}
         </div>
 
-        <Reveal variant="fade" delay={0.4} duration={0.5} className="mt-12">
-          <p className="font-display text-2xl font-medium text-accent-soft sm:text-3xl">
-            Antes de sumar herramientas, hay que encontrar el verdadero
-            límite.
+        <Reveal variant="rise" delay={0.4} duration={0.5} className="mt-12">
+          <p className="font-display text-2xl font-medium uppercase leading-snug text-accent-soft sm:text-3xl">
+            Antes de hacer más, hay que descubrir qué está frenando de
+            verdad al negocio.
           </p>
         </Reveal>
       </div>
